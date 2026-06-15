@@ -1,11 +1,16 @@
+<script setup lang="ts">
+import router from '@/router';
+
+</script>
+
 <template>
   <header class="header">
     <div class="header-content">
-      <div class="logo">Logo</div>
+      <div class="logo">Plataforma Mundo dos Dinossauros</div>
       <nav class="nav-links">
-        <a href="#" class="nav-link">Início</a>
-        <a href="#" class="nav-link">Mapa</a>
-        <a href="#" class="nav-link">Equipe</a>
+        <router-link to="/" class="nav-link">Início</router-link>
+        <router-link to="/mapa" class="nav-link">Mapa</router-link>
+        <router-link to="/catalogo" class="nav-link">Catálogo</router-link>
       </nav>
     </div>
   </header>
