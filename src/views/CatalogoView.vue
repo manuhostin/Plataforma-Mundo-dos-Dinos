@@ -7,7 +7,6 @@ import dinossauros from '../data/dinossauros'
     <header class="catalogo-header">
       <div>
         <h1>Catálogo de Dinossauros Brasileiros</h1>
-        <p>Alimente o catálogo editando manualmente <code>src/data/dinossauros.js</code>.</p>
       </div>
     </header>
 
