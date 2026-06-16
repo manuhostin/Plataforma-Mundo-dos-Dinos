@@ -206,7 +206,7 @@ function limparFiltros() {
 
 .catalogo-header h1{
   margin:0;
-  color:#1b2a41;
+  color: #336808;
 }
 
 .catalogo-header p{
@@ -223,7 +223,7 @@ function limparFiltros() {
 .filtros input,
 .filtros select{
   padding:12px;
-  border:1px solid #dbe2ea;
+  border:1px solid #3b75b8;
   border-radius:12px;
 }
 
@@ -232,7 +232,7 @@ function limparFiltros() {
   padding:12px 18px;
   border-radius:12px;
   cursor:pointer;
-  background:#1b2a41;
+  background:#006e00;
   color:white;
 }
 

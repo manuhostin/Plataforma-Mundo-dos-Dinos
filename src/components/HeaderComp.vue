@@ -4,7 +4,7 @@
 <template>
   <header class="header">
     <div class="header-content">
-      <div class="logo">Plataforma Mundo dos Dinossauros</div>
+      <div class="logo">Dinossauros Brasileiros</div>
       <nav class="nav-links">
         <router-link to="/" class="nav-link">Início</router-link>
         <router-link to="/mapa" class="nav-link">Mapa</router-link>
@@ -44,11 +44,11 @@
 .nav-link {
   font-weight: 400;
   font-size: 12px;
-  color: #718096;
+  color: #df9d10;
   text-decoration: none;
 }
 
 .nav-link:hover {
-  color: #2a4365;
+  color: #336808;
 }
 </style>

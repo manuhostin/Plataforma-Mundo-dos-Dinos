@@ -5,7 +5,7 @@
         <p><strong>O Fantástico Mundo dos Dinossauros</strong></p>
         <p>Pesquisa sobre a paleofauna brasileira</p>
       </div>
-      <div class="right-info">© 2024 Todos os direitos reservados</div>
+      <div class="right-info">Desenvolvido por: Manu Hostin</div>
     </div>
   </footer>
 </template>
