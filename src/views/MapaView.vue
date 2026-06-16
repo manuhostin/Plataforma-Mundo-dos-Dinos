@@ -49,6 +49,10 @@ onMounted(() => {
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+ * {
+  font-family: 'Lexend Deca', sans-serif;
+ }
 .mapa-page {
   display: flex;
   flex-direction: column;

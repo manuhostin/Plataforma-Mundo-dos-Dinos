@@ -9,12 +9,17 @@
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+*{
+  font-family: 'Lexend Deca', sans-serif;
+}
 .home-hero {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 180px);
   padding: 40px 0;
+  font-family: 'Lexend Deca', sans-serif;
 }
 
 .hero-card {
