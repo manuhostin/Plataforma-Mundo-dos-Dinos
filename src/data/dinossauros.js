@@ -10,7 +10,7 @@ const dinossauros = [
     peso: '30 t',
     descricao: 'Titanossauro brasileiro descrito em 2006 a partir de vértebras caudais e outros restos fósseis encontrados na Formação Adamantina. Faz parte do grupo dos saurópodes de pescoço longo que dominaram os ecossistemas sul-americanos durante o Cretáceo.',
     curiosidades: 'O nome do gênero faz referência à Formação Adamantina, onde seus fósseis foram encontrados. O nome específico "mezzalirai" homenageia o paleontólogo brasileiro Sérgio Mezzalira. É conhecido por fósseis relativamente fragmentários, o que dificulta estimativas precisas de tamanho.',
-    imagem: '',
+    imagem: '/dinossauros/adamantisaurusmezzalirai.jpg',
     coords: [-21.6000, -50.1000], // Adamantina, SP
   },
   {
@@ -24,7 +24,7 @@ const dinossauros = [
     peso: '3,5 kg',
     descricao: 'Pequeno dinossauromorfo do Triássico, com corpo leve e adaptado para correr. Descoberto em rochas da Formação Santa Maria em 2023.',
     curiosidades: '"Amana" vem do tupi e significa chuva, enquanto "saurus" deriva do grego e quer dizer lagarto. O nome é uma referência direta ao Evento Pluvial Carniano.',
-    imagem: '',
+    imagem: '/dinossauros/amanassauro.jpg',
     coords: [-29.8211, -53.3753], // Santa Maria, RS
   },
   {
@@ -38,7 +38,7 @@ const dinossauros = [
     peso: '5 t',
     descricao: 'Sauropode de médio porte, com pescoço longo e cauda robusta. Descoberto em rochas da Formação Itapecuru no Maranhão.',
     curiosidades: 'É o primeiro dinossauro encontrado na Amazônia Legal. Seu nome homenageia o estado do Maranhão e a região amazônica.',
-    imagem: '',
+    imagem: '/dinossauros/amazonsaurus1.jpg',
     coords: [-3.3912, -44.3592], // Região do Maranhão
   },
   {
@@ -52,7 +52,7 @@ const dinossauros = [
     peso: '500 kg a 1 t',
     descricao: 'Espinossaurídeo brasileiro com crista craniana alongada e dentes cônicos adaptados para capturar peixes. Vivia próximo a ambientes aquáticos.',
     curiosidades: 'O nome Angaturama vem do tupi e significa "espírito protetor" ou "nobre". O sobrenome limai homenageia o paleontólogo brasileiro Murilo Rodolfo de Lima.',
-    imagem: '',
+    imagem: '/dinossauros/angaturama.jpg',
     coords: [-7.1195, -40.3489], // Santana do Cariri, CE
   },
   {
@@ -66,7 +66,7 @@ const dinossauros = [
     peso: '20 - 34,5 kg',
     descricao: 'Pequeno celurossauro carnívoro, com corpo leve e adaptado para correr. Seu fóssil foi descoberto em rochas da Formação Romualdo e sobreviveu ao incêndio do Museu Nacional.',
     curiosidades: 'O nome é uma homenagem ao Museu Nacional do Rio de Janeiro, que sofreu um incêndio devastador em 2018. O fóssil do Aratasaurus resistiu ao incêndio.',
-    imagem: '',
+    imagem: '/dinossauros/Aratasaurus_museunacionali.jpg',
     coords: [-7.1195, -40.3489], // Santana do Cariri, CE
   },
   {
@@ -80,7 +80,7 @@ const dinossauros = [
     peso: '10 - 12,3 t',
     descricao: 'Titanossauro quadrúpede com cabeça pequena, pescoço muito longo para alcançar copas de árvores e pernas robustas como colunas. Seguia o padrão clássico dos saurópodes.',
     curiosidades: 'Era herbívoro pacífico, passando a maior parte do dia engolindo grandes quantidades de folhas sem mastigar, usando seus dentes em formato de lápis apenas para arrancar a vegetação.',
-    imagem: '',
+    imagem: '/dinossauros/arrudatitan.jpg',
     coords: [-21.3283, -48.6311], // Cândido Rodrigues, SP
   },
   {
@@ -94,7 +94,7 @@ const dinossauros = [
     peso: '20 - 30 t',
     descricao: 'Um dos maiores dinossauros saurópodes já encontrados no Brasil. Possuía vértebras cervicais e dorsais excepcionalmente longas, indicando um pescoço e tronco de grandes proporções.',
     curiosidades: 'Seu nome significa "poseidon do sul", em referência ao deus grego do mar e à sua localização no hemisfério sul. Foi descrito em 2016 a partir de material fóssil coletado em São Paulo.',
-    imagem: '',
+    imagem: '/dinossauros/Austroposeidon_LM.jpg',
     coords: [-22.1225, -51.3889], // Região de Adamantina, SP
   },
   {
@@ -108,7 +108,7 @@ const dinossauros = [
     peso: '150 kg',
     descricao: 'Pequeno sauropodomorfo basal do Triássico, com membros robustos e hábito provavelmente bípede. Considerado um dos primeiros herbívoros do grupo dos dinossauros.',
     curiosidades: '"Bagual" é uma palavra regional gaúcha que significa cavalo selvagem. O nome faz referência à fauna selvagem do Rio Grande do Sul. Seu fóssil foi encontrado em Agudo (RS).',
-    imagem: '',
+    imagem: '/dinossauros/bagualosaurus.png',
     coords: [-29.6198, -53.2495], // Agudo, RS
   },
   {
@@ -122,7 +122,7 @@ const dinossauros = [
     peso: '10 - 15 t',
     descricao: 'Titanossauro de grande porte descoberto em Uberaba, Minas Gerais. Conhecido por vértebras caudais com características morfológicas únicas dentro dos titanossauros brasileiros.',
     curiosidades: 'O nome do gênero homenageia o Grupo Bauru e a espécie homenageia o influente paleontólogo brasileiro Ignácio Aureliano Machado Brito. Seus fósseis foram coletados na famosa região de Peirópolis, em Uberaba.',
-    imagem: '',
+    imagem: '/dinossauros/baurutitan.png',
     coords: [-19.7417, -47.9386], // Uberaba, MG
   },
   {
@@ -136,7 +136,7 @@ const dinossauros = [
     peso: 'Entre 8 e 15kg',
     descricao: 'Pequeno ceratossauro bípede notável por não possuir dentes — uma característica raríssima entre os dinossauros carnívoros, sugerindo dieta onívora ou herbívora.',
     curiosidades: 'Homenageia Bertha Lutz, pioneira do feminismo e da ciência brasileira, e a Princesa Leopoldina. É um dos únicos dinossauros sem dentes encontrados no Brasil.',
-    imagem: '',
+    imagem: '/dinossauros/berthassauro.jpg',
     coords: [-23.7844, -53.0747], // Região do Paraná
   },
   {
@@ -150,7 +150,7 @@ const dinossauros = [
     peso: '8 - 12 t',
     descricao: 'Titanossauro de médio a grande porte descoberto em São Paulo. Possuía mandíbulas peculiares com dentes em formato de espatula, diferente de outros titanossauros.',
     curiosidades: '"Brasil" + "titan" (gigante) + "nemo" (floresta) + "phagus" (comer): "o titã gigante comedor de florestas do Brasil". Descrito em 2013 a partir de material da Formação Adamantina.',
-    imagem: '',
+    imagem: '/dinossauros/brasilotitan.jpg',
     coords: [-21.6825, -51.0731], // Região de Adamantina, SP
   },
   {
@@ -164,7 +164,7 @@ const dinossauros = [
     peso: '2 - 5 kg',
     descricao: 'Um dos sauropodomorphas mais basais conhecidos, surpreendentemente carnívoro. Evidencia que os ancestrais dos grandes saurópodes herbívoros começaram como pequenos predadores.',
     curiosidades: 'Seu nome homenageia a família Buriol, proprietária do sítio onde o fóssil foi encontrado, e o paleontólogo Ruben Schultz. Encontrado em São João do Polêsine, RS.',
-    imagem: '',
+    imagem: '/dinossauros/buriolestes.jpg',
     coords: [-29.6198, -53.4000], // São João do Polêsine, RS
   },
   {
@@ -178,7 +178,7 @@ const dinossauros = [
     peso: '8 - 12 t',
     descricao: 'Titanossauro do final do Cretáceo com morfologia caudal incomum, diferente de outros membros do grupo. Encontrado na região de Uberaba, Minas Gerais.',
     curiosidades: '"Caieiria" vem do tupi e faz referência à região de Uberaba. O nome da espécie "allocaudata" refere-se à sua cauda morfologicamente distinta dos demais titanossauros.',
-    imagem: '',
+    imagem: '/dinossauros/caieiria2.png',
     coords: [-19.7417, -47.9386], // Uberaba, MG
   },
   {
@@ -192,7 +192,7 @@ const dinossauros = [
     peso: 'Desconhecido (ave de pequeno porte)',
     descricao: 'Ave pré-histórica (dinossauro aviano) do Cretáceo Inferior, encontrada na Formação Crato. Possuía características primitivas misturadas a traços mais modernos.',
     curiosidades: '"Crato" refere-se à cidade de Crato (CE), local da descoberta; "avis" significa ave em latim; "cearensis" indica a origem cearense. É uma das aves mesozoicas mais antigas do Brasil.',
-    imagem: '',
+    imagem: '/dinossauros/cratoaviss.png',
     coords: [-7.2342, -39.4089], // Crato, CE
   },
   {
@@ -206,7 +206,7 @@ const dinossauros = [
     peso: 'Desconhecido',
     descricao: 'Saurópode encontrado em rochas da Formação Itapecuru. Material fragmentário dificulta uma classificação mais precisa dentro dos saurópodes brasileiros do Cretáceo.',
     curiosidades: 'O nome da espécie faz referência ao estado do Tocantins, onde foram encontrados os fósseis. Representa a fauna pré-histórica pouco conhecida do Centro-Norte do Brasil.',
-    imagem: '',
+    imagem: '/dinossauros/dasosaurus.jpg',
     coords: [-10.1847, -48.3336], // Palmas, TO
   },
   {
@@ -220,7 +220,7 @@ const dinossauros = [
     peso: 'Desconhecido',
     descricao: 'Dinossauro carnívoro basal do Triássico Superior, encontrado às margens do Rio Jacuí no RS. Um dos primeiros predadores do clado Dinosauria conhecidos do Brasil.',
     curiosidades: '"Erythro" vem do grego e significa vermelho (em referência à coloração das rochas onde foi encontrado); "venator" significa caçador; "jacuiensis" faz referência ao Rio Jacuí, RS.',
-    imagem: '',
+    imagem: '/dinossauros/erythrovenator.jpg',
     coords: [-29.6869, -53.8098], // Região de Santa Maria, RS
   },
   {
@@ -234,7 +234,7 @@ const dinossauros = [
     peso: 'Desconhecido',
     descricao: 'Icnotáxon (dinossauro conhecido apenas por rastros fósseis) encontrado em dunas fósseis da Formação Botucatu. As pegadas sugerem um animal bípede de locomoção rápida.',
     curiosidades: 'O nome homenageia o paleontólogo americano James Farlow, especialista em rastros de dinossauros. "Rapidus" refere-se à velocidade inferida pelo padrão das pegadas encontradas.',
-    imagem: '',
+    imagem: '/dinossauros/farlowichnus1.png',
     coords: [-22.0000, -47.5000], // Região da Formação Botucatu, SP
   },
   {
@@ -248,7 +248,7 @@ const dinossauros = [
     peso: 'Desconhecido',
     descricao: 'Dinossauriformes da família Silesauridae, encontrado em uma das formações geológicas mais ricas em fósseis do Triássico no Brasil. Animal quadrúpede de pequeno porte.',
     curiosidades: '"Gamata" tem raiz no tupi; "vus" é sufixo latino. É um dos dinossauriformes mais antigos encontrados no Brasil, evidenciando a diversidade triássica do Rio Grande do Sul.',
-    imagem: '',
+    imagem: '/dinossauros/gamatavus.jpg',
     coords: [-29.6869, -53.8098], // Santa Maria, RS
   },
   {
@@ -262,7 +262,7 @@ const dinossauros = [
     peso: '1 - 2 t (estimado)',
     descricao: 'Material fóssil atribuído a um abelissaurídeo ainda sem nome formal. Os abelissaurídeos eram grandes predadores bípedes com braços reduzidos e crânio alto e robusto.',
     curiosidades: 'Os abelissaurídeos foram os grandes predadores dominantes do Cretáceo no hemisfério sul. Seu nome seria formalizado somente após estudos mais completos do material fóssil.',
-    imagem: '',
+    imagem: '/dinossauros/abelisauridae1.jpg',
     coords: [-22.2127, -49.9498], // Região de Marília, SP
   },
   {
@@ -276,7 +276,7 @@ const dinossauros = [
     peso: '4 - 6 t (estimado)',
     descricao: 'Dentes e ossos fragmentários atribuídos a um carcarondontossaurídeo sem nome formal. Esses gigantescos predadores possuíam dentes serrilhados semelhantes aos do tubarão.',
     curiosidades: 'Os carcharodontossaurídeos estavam entre os maiores predadores terrestres de todos os tempos. A presença desse grupo no Brasil evidencia conexões faunísticas com África e América do Norte.',
-    imagem: '',
+    imagem: '/dinossauros/carcharodontosaurus1.png',
     coords: [-2.4069, -44.2769], // São Luís, MA
   },
   {
@@ -290,7 +290,7 @@ const dinossauros = [
     peso: '200 kg (estimado)',
     descricao: 'Material fragmentário atribuído a um ceratossauro afim ao Elaphrosaurus africano. Animal bípede de membros longos, possivelmente com dieta variada.',
     curiosidades: 'A ocorrência desse grupo no Maranhão reforça a hipótese de intercâmbio faunístico entre América do Sul e África durante o Cretáceo, quando os dois continentes ainda estavam próximos.',
-    imagem: '',
+    imagem: '/dinossauros/Elaphrosaurus1.jpg.png',
     coords: [-2.4069, -44.2769], // São Luís, MA
   },
   {
@@ -304,7 +304,7 @@ const dinossauros = [
     peso: '1 - 2 t (estimado)',
     descricao: 'Fóssil ainda sem nome formal atribuído ao grupo Megaraptora, predadores ágeis com garras dianteiras enormes. Encontrado na riquíssima região paleontológica de Uberaba.',
     curiosidades: 'Os megaraptoranos são conhecidos pelas garras dianteiras avantajadas usadas para capturar presas. A presença desse grupo em Minas Gerais amplia o conhecimento sobre a distribuição desses predadores na América do Sul.',
-    imagem: '',
+    imagem: '/dinossauros/Megaraptora.png',
     coords: [-19.7417, -47.9386], // Uberaba, MG
   },
   {
@@ -318,7 +318,7 @@ const dinossauros = [
     peso: '3 - 5 t (estimado)',
     descricao: 'Vértebras e dentes fragmentários atribuídos a um espinossaurídeo próximo ao Sigilmassasaurus. Espinossaurídeos eram predadores semi-aquáticos especializados em peixes.',
     curiosidades: 'A distribuição dos fósseis por vários estados do Nordeste sugere que esse animal habitava extensas áreas costeiras e fluviais do Brasil cretáceo. Relacionado aos famosos Spinosaurus e Irritator.',
-    imagem: '',
+    imagem: '/dinossauros/sigilmassaurus.jpg',
     coords: [-2.4069, -44.2769], // São Luís, MA
   },
   {
@@ -332,7 +332,7 @@ const dinossauros = [
     peso: '40 - 70 kg',
     descricao: 'Um dos mais completos herrerassaurídeos já descobertos. Predador ágil do Triássico com dentes serrilhados e membros posteriores alongados para a corrida.',
     curiosidades: '"Gnathovorax" significa "mandíbula voraz" em grego, e "cabreirai" homenageia o pesquisador Sérgio Furtado Cabreira. É um dos primeiros grandes predadores do registro fóssil de dinossauros.',
-    imagem: '',
+    imagem: 'public/dinossauros/gnathovorax1.jpg',
     coords: [-29.6869, -53.8098], // Santa Maria, RS
   },
   {
@@ -346,7 +346,7 @@ const dinossauros = [
     peso: '5 - 7 t',
     descricao: 'Titanossauro de médio porte com cauda longa e flexível. Pertence ao clado Aeolosaurini, um grupo de titanossauros sul-americanos com características caudais distintas.',
     curiosidades: '"Gondwana" refere-se ao supercontinente do hemisfério sul; "titan" significa gigante; "faustoi" homenageia o paleontólogo Llewellyn Ivor Price, cujo nome do meio era Fausto. Descrito em 1999.',
-    imagem: '',
+    imagem: 'public/dinossauros/gondwanatan.jpg',
     coords: [-21.6825, -51.0731], // Região de Adamantina, SP
   },
   {
@@ -360,7 +360,7 @@ const dinossauros = [
     peso: 'Desconhecido',
     descricao: 'Silessaurídeo do Triássico Médio encontrado em Paraíso do Sul, RS. Dinossauriformes próximo à base do grupo, provavelmente quadrúpede e herbívoro.',
     curiosidades: '"Gondwanax" faz referência ao supercontinente Gondwana; "paraisensis" indica a cidade de Paraíso do Sul (RS), onde o fóssil foi encontrado. Um dos dinossauriformes mais antigos do Brasil.',
-    imagem: '',
+    imagem: '/dinossauros/gondwanax.png',
     coords: [-29.7244, -53.1415], // Paraíso do Sul, RS
   },
   {
@@ -374,7 +374,7 @@ const dinossauros = [
     peso: '10 - 20 kg',
     descricao: 'Dinossauro basal do Triássico Superior, de posição filogenética debatida. Possuía membros posteriores longos, indicando locomoção bípede ágil.',
     curiosidades: '"Guaiba" refere-se ao Lago Guaíba; "saurus" é lagarto em grego; "candelariensis" indica Candelária, RS. É um dos dinossauros basais mais importantes para entender a origem do grupo.',
-    imagem: '',
+    imagem: '/dinossauros/Guaibasaurus_NT.jpg',
     coords: [-29.6686, -52.7800], // Candelária, RS
   },
   {
@@ -388,7 +388,7 @@ const dinossauros = [
     peso: '2 - 4 t',
     descricao: 'Pequeno titanossauro encontrado em São José do Rio Preto, SP. Seu tamanho reduzido em relação a outros titanossauros pode ser resultado de nanismo insular ou ecológico.',
     curiosidades: '"Ibirania" vem do tupi e significa "terra da serpente" ou faz referência à cidade de Ibirá (SP); "parva" significa pequena em latim, indicando seu tamanho reduzido. Descrito em 2022.',
-    imagem: '',
+    imagem: 'public/dinossauros/ibirania1.jpg',
     coords: [-20.8197, -49.3794], // São José do Rio Preto, SP
   },
   {
@@ -402,7 +402,7 @@ const dinossauros = [
     peso: '1 t',
     descricao: 'Espinossaurídeo brasileiro com crânio longo e dentes cônicos, adaptado para capturar peixes. Parente próximo do Angaturama limai, com quem pode ser o mesmo animal.',
     curiosidades: 'O nome "Irritator" surgiu porque os paleontólogos ficaram "irritados" ao descobrir que o fóssil tinha sido adulterado por vendedores para parecer mais completo. "Challengeri" homenageia o Professor Challenger de Arthur Conan Doyle.',
-    imagem: '',
+    imagem: '/dinossauros/irritator.jpg',
     coords: [-7.1195, -40.3489], // Santana do Cariri, CE
   },
   {
@@ -416,7 +416,7 @@ const dinossauros = [
     peso: 'Desconhecido',
     descricao: 'Rincocáuro do Triássico Médio encontrado no Rio Grande do Sul. Apesar de frequentemente listado com dinossauros, pertence a um grupo irmão dos dinossauros.',
     curiosidades: '"Itaguyra" é de origem tupi; "occulta" significa oculta em latim, referindo-se à dificuldade de encontrar seus fósseis. Rincocáuros foram herbívoros abundantes no Triássico do Brasil.',
-    imagem: '',
+    imagem: '/dinossauros/itaguyra.jpg',
     coords: [-29.6869, -53.8098], // Santa Maria, RS
   },
   {
@@ -430,7 +430,7 @@ const dinossauros = [
     peso: 'Desconhecido',
     descricao: 'Titanossauro encontrado em rochas da Formação Itapecuru, no município de Cajapió, Maranhão. Material fragmentário limita a caracterização detalhada do animal.',
     curiosidades: '"Itapeua" é de origem tupi e refere-se à pedra grande; "saurus" é lagarto em grego; "cajapioensis" indica o município de Cajapió (MA), local da descoberta.',
-    imagem: '',
+    imagem: '/dinossauros/itapeuasaurus.jpg',
     coords: [-2.5893, -44.8167], // Cajapió, MA
   },
   {
@@ -444,7 +444,7 @@ const dinossauros = [
     peso: '300 - 500 kg',
     descricao: 'Abelissaurídeo do final do Cretáceo encontrado em Minas Gerais. Predador bípede com braços rudimentares e crânio robusto, típico do grupo.',
     curiosidades: '"Kurupi" é um ser mitológico da cultura guarani conhecido por sua agilidade e agressividade; "itaata" vem do tupi e significa "pedra dura", referência às rochas onde foi encontrado. Descrito em 2020.',
-    imagem: '',
+    imagem: '/dinossauros/kurupi.jpg',
     coords: [-19.7417, -47.9386], // Uberaba, MG
   },
   {
@@ -458,7 +458,7 @@ const dinossauros = [
     peso: 'Desconhecido (ave muito pequena)',
     descricao: 'Ave pré-histórica do grupo Enantiornithes, encontrada na Formação Crato. As enantiornites eram aves primitivas com dentes e garras nas asas, extintas no final do Cretáceo.',
     curiosidades: '"Kariri" refere-se ao povo indígena Kariri do sertão cearense; "avis" é ave em latim; "mater" significa mãe, possivelmente aludindo ao caráter primitivo ("mãe das aves"). Formação Crato é mundialmente famosa por seus fósseis.',
-    imagem: '',
+    imagem: '/dinossauros/kaririavis.jpg',
     coords: [-7.2342, -39.4089], // Crato, CE
   },
   {
@@ -472,7 +472,7 @@ const dinossauros = [
     peso: '30 - 50 kg',
     descricao: 'Sauropodomorfo basal com pescoço inusualmente longo para sua época. É considerado o mais antigo representante conhecido do clado dos saurópodes com pescoço alongado.',
     curiosidades: '"Macro" significa grande; "collum" é pescoço em latim: "pescoço grande". "Itaquii" homenageia o Instituto Tecnológico de Pesquisa (ITAQUI). Seu pescoço longo é uma das primeiras adaptações herbívoras dos dinossauros.',
-    imagem: '',
+    imagem: '/dinossauros/macrollum.jpg',
     coords: [-29.6198, -53.2495], // Agudo, RS
   },
   {
