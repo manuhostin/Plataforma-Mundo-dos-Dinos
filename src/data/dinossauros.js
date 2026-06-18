@@ -486,7 +486,7 @@ const dinossauros = [
     peso: '9 t',
     descricao: 'Titanossauro de grande porte encontrado em Minas Gerais. Possui vértebras com estrutura interna complexa, característica do grupo Titanosauria.',
     curiosidades: '"Maxakali" homenageia o povo indígena Maxakali de Minas Gerais; "saurus" é lagarto; "topai" homenageia o deus criador da mitologia Maxakali. O espécime foi montado e está exposto no Museu Nacional do Rio de Janeiro.',
-    imagem: '',
+    imagem: '/dinossauros/maxakalisaurus1.jpg',
     coords: [-17.9302, -41.9919], // Região dos Maxakali, MG
   },
   {
@@ -500,7 +500,7 @@ const dinossauros = [
     peso: '15 - 20 kg',
     descricao: 'Pequeno celurrossauro carnívoro com tecidos moles preservados, raríssimo no registro fóssil brasileiro. Os tecidos preservados revelam detalhes de sua anatomia interna.',
     curiosidades: '"Mirischia" vem do tupi e significa "carne bonita" ou "bela carne", referindo-se à preservação excepcional de tecidos moles. "Asymmetrica" indica a assimetria de seus sacos aéreos abdominais.',
-    imagem: '',
+    imagem: '/dinossauros/mirischia.jpg',
     coords: [-7.9906, -38.2760], // Região de Exu, PE (Formação Santana)
   },
   {
@@ -514,7 +514,7 @@ const dinossauros = [
     peso: 'Desconhecido',
     descricao: 'Ave primitiva do Cretáceo Superior encontrada na Formação Adamantina. Representa um dos poucos registros de aves mesozoicas no interior do continente sul-americano.',
     curiosidades: '"Nava" tem raiz tupi; "ornis" significa pássaro em grego; "hestiae" homenageia a deusa grega Héstia. A descoberta amplia o conhecimento sobre a diversidade de aves no Cretáceo do Brasil.',
-    imagem: '',
+    imagem: '/dinossauros/navaornis.png',
     coords: [-22.1253, -51.3925], // Presidente Prudente, SP
   },
   {
@@ -528,7 +528,7 @@ const dinossauros = [
     peso: 'Desconhecido',
     descricao: 'Pequeno dinossauro ou dinossauriformes do Triássico Superior do Rio Grande do Sul. Sua posição filogenética exata ainda é debatida entre os especialistas.',
     curiosidades: '"Nhandu" vem do tupi e refere-se à aranha (pela agilidade); "mirim" significa pequeno em tupi: "pequena aranha". Homenageia Waldirene Pereira Cantão, pesquisadora brasileira. Descrito em 2021.',
-    imagem: '',
+    imagem: '/dinossauros/nhandumirim.jpg',
     coords: [-29.6869, -53.8098], // Santa Maria, RS
   },
   {
@@ -542,7 +542,7 @@ const dinossauros = [
     peso: '5 - 7 t',
     descricao: 'Um dos maiores predadores já descritos no Brasil e um dos maiores espinossaurídeos conhecidos. Predador semi-aquático especializado em peixes, com dentes cônicos e crânio longo.',
     curiosidades: '"Oxalaia" homenageia o orixá Oxalá do candomblé brasileiro; "quilombensis" refere-se à Ilha do Cajual (MA), chamada de "ilha dos quilombolas". É o maior dinossauro carnívoro já encontrado no Brasil.',
-    imagem: '',
+    imagem: '/dinossauros/oxalaia.jpg',
     coords: [-2.5893, -44.8167], // Ilha do Cajual, MA
   },
   {
@@ -556,7 +556,7 @@ const dinossauros = [
     peso: '6 - 10 kg',
     descricao: 'Sauropodomorfo basal ágil e bípede do Triássico Superior. É um dos primeiros dinossauros herbívoros conhecidos da América do Sul, com dentes foliados indicando dieta vegetal.',
     curiosidades: '"Pampa" refere-se aos campos do RS; "dromaeus" significa corredor em grego; "barberenai" homenageia o paleontólogo Mario Costa Barberena. Descrito em 2011, lança luz sobre os primeiros herbívoros do grupo.',
-    imagem: '',
+    imagem: '/dinossauros/pampadromaeus.jpg',
     coords: [-29.6869, -53.8098], // Santa Maria, RS
   },
   {
@@ -570,7 +570,7 @@ const dinossauros = [
     peso: '1,5 - 2 t',
     descricao: 'Um dos maiores abelissaurídeos conhecidos. Predador bípede robusto com braços reduzidos e crânio alto. Considerado por alguns estudos o maior carnívoro do Brasil.',
     curiosidades: '"Pycno" significa denso/compacto; "nemos" é floresta; "saurus" é lagarto: "lagarto da floresta densa". "Nevesi" homenageia o geólogo José Rubens Neves. É o maior abelissaurídeo já encontrado no Brasil.',
-    imagem: '',
+    imagem: 'public/dinossauros/pycnonemosaurus.jpg',
     coords: [-15.6014, -56.0979], // Cuiabá, MT (referência da região)
   },
   {
@@ -584,7 +584,7 @@ const dinossauros = [
     peso: '3 - 5 kg',
     descricao: 'Silessaurídeo do Triássico Superior, com dentes adaptados para mastigar plantas. Dinossauriformes ágil e de pequeno porte, próximo da linhagem que originou os dinossauros.',
     curiosidades: '"Saci" é uma referência ao Saci-Pererê do folclore brasileiro, ser com uma perna só — aludindo ao fóssil incompleto encontrado. "Agudoensis" indica Agudo (RS), local da descoberta.',
-    imagem: '',
+    imagem: '/dinossauros/sacissauro.jpg',
     coords: [-29.6198, -53.2495], // Agudo, RS
   },
   {
@@ -598,7 +598,7 @@ const dinossauros = [
     peso: '10 - 20 kg',
     descricao: 'Pequeno celurrossauro com tecidos moles preservados, permitindo o estudo de vasos sanguíneos e fibras musculares. É um dos raros dinossauros brasileiros com preservação de partes moles.',
     curiosidades: '"Santana" refere-se à Formação Santana; "raptor" é ladrão em latim; "placidus" significa pacífico. Apesar do nome "raptor", é um parente basal dos tiranossauros, não dos velociraptores.',
-    imagem: '',
+    imagem: '/dinossauros/santanaraptor.jpg',
     coords: [-7.1195, -40.3489], // Santana do Cariri, CE
   },
   {
@@ -612,7 +612,7 @@ const dinossauros = [
     peso: '8 - 10 kg',
     descricao: 'Um dos sauropodomorphas mais basais e antigos conhecidos. Bípede ágil com dentes que sugerem dieta mista. Representou uma das descobertas mais importantes da paleontologia brasileira na época.',
     curiosidades: '"Saturnalia" refere-se à festa romana Saturnália, pois foi descoberto durante essa época do ano; "tupiniquim" homenageia os povos indígenas Tupiniquim do Brasil. Descrito em 1999, é um dos mais antigos sauropodomorphas conhecidos.',
-    imagem: '',
+    imagem: '/dinossauros/saturnalia.jpg',
     coords: [-29.6869, -53.8098], // Santa Maria, RS
   },
   {
@@ -626,7 +626,7 @@ const dinossauros = [
     peso: '100 - 200 kg',
     descricao: 'Abelissaurídeo basal do Cretáceo Inferior, encontrado em Minas Gerais. Um dos abelissaurídeos mais antigos conhecidos, lançando luz sobre a origem e evolução do grupo.',
     curiosidades: '"Spectro" vem de espectro (fantasma); "venator" é caçador em latim: "caçador fantasma". "Ragei" homenageia o paleontólogo francês Jean-Claude Rage. Descrito em 2013 a partir de material de Minas Gerais.',
-    imagem: '',
+    imagem: 'public/dinossauros/spectrovenator.jpg',
     coords: [-18.9186, -44.4297], // Região da Formação Quiricó, MG
   },
   {
@@ -640,7 +640,7 @@ const dinossauros = [
     peso: '30 kg',
     descricao: 'Um dos dinossauros mais antigos já descobertos, e o primeiro dinossauro brasileiro a ser descrito formalmente. Predador bípede ágil e de médio porte para os padrões do Triássico.',
     curiosidades: '"Staurikosaurus" significa "lagarto da Cruz do Sul", constelação visível no hemisfério sul. "Pricei" homenageia o paleontólogo americano Llewellyn Ivor Price, pioneiro da paleontologia brasileira. Descrito em 1970.',
-    imagem: '',
+    imagem: '/dinossauros/staurikosaurus.jpg',
     coords: [-29.6869, -53.8098], // Santa Maria, RS
   },
   {
@@ -654,7 +654,7 @@ const dinossauros = [
     peso: '8 - 10 t',
     descricao: 'Titanossauro com crânio excepcionalmente bem preservado, raridade nos fósseis de saurópodes. O crânio permitiu importantes estudos sobre a filogenia dos titanossauros.',
     curiosidades: '"Tapuia" é o nome dado pelos Tupis a povos rivais do interior; "saurus" é lagarto; "macedoi" homenageia o geólogo Antônio Marcos Paganini Macedo. O crânio completo é uma das descobertas mais importantes entre os titanossauros.',
-    imagem: '',
+    imagem: '/dinossauros/tapuiasaurus.jpg',
     coords: [-18.9186, -44.4297], // Região da Formação Quiricó, MG
   },
   {
@@ -668,7 +668,7 @@ const dinossauros = [
     peso: '300 - 500 kg',
     descricao: 'Abelissaurídeo do Cretáceo Superior encontrado em São Paulo. Predador bípede com os braços reduzidos característicos dos abelissaurídeos e crânio robusto.',
     curiosidades: 'Recebeu o nome "Thanos" em homenagem ao vilão da Marvel, por suas mãos rudimentares (semelhantes às do personagem). "Simonattoi" homenageia o colecionador de fósseis Simonatto. Descrito em 2021.',
-    imagem: '',
+    imagem: 'public/dinossauros/thanos.webp',
     coords: [-21.6825, -51.0731], // Região de Adamantina, SP
   },
   {
@@ -682,7 +682,7 @@ const dinossauros = [
     peso: '200 - 500 kg (estimado)',
     descricao: 'Abelissaurídeo descrito recentemente, pertencente ao rico registro fóssil do Grupo Bauru. Material ainda parcialmente estudado.',
     curiosidades: '"Tiamat" é o nome de um dragão da mitologia mesopotâmica, uma deusa primordial do caos. "Valdecii" homenageia um pesquisador brasileiro. Representa mais um membro da fauna de predadores do Cretáceo do Grupo Bauru.',
-    imagem: '',
+    imagem: 'public/dinossauros/tiamat.png',
     coords: [-21.6825, -51.0731], // Região do Grupo Bauru, SP
   },
   {
@@ -696,7 +696,7 @@ const dinossauros = [
     peso: '100 - 200 kg (estimado)',
     descricao: 'Pequeno dinossauro ornitópode elasmariano descrito em 2024 a partir de um fêmur incompleto encontrado na Formação Marfim. É o primeiro dinossauro ornitísquio formalmente nomeado no Brasil.',
     curiosidades: 'O nome "Tietasaura" homenageia a personagem Tieta, do romance "Tieta do Agreste", de Jorge Amado. O nome específico "derbyiana" homenageia o geólogo Orville A. Derby. O fóssil foi descoberto em 1906 e permaneceu mais de um século identificado incorretamente como um crocodiliforme.',
-    imagem: '',
+    imagem: 'public/dinossauros/tietasaura.jpg',
     coords: [-12.973, -38.501], // estrada de ferro
   },
   {
@@ -710,7 +710,7 @@ const dinossauros = [
     peso: '8 - 12 t',
     descricao: 'Titanossauro com vértebras de forma triangular característica. O nome entre aspas indica que é um nomen dubium (nome incerto), pois o material pode ser inadequado para validar o gênero.',
     curiosidades: '"Trigono" refere-se ao formato triangular das vértebras; "saurus" é lagarto; "pricei" homenageia o paleontólogo Llewellyn Ivor Price. A validade taxonômica do gênero é debatida na literatura científica.',
-    imagem: '',
+    imagem: 'public/dinossauros/trigonosaurus1.png',
     coords: [-19.7417, -47.9386], // Uberaba, MG
   },
   {
@@ -724,7 +724,7 @@ const dinossauros = [
     peso: '8 - 12 t',
     descricao: 'Titanossauro do Cretáceo Superior encontrado em São Paulo. Integra o diverso conjunto de titanossauros do Grupo Bauru, um dos mais ricos registros de saurópodes do mundo.',
     curiosidades: '"Triunfo" faz referência ao município paulista; "saurus" é lagarto; "leonardii" homenageia o padre e pesquisador italiano Giorgio Leonardi, pioneiro no estudo de rastros de dinossauros no Brasil.',
-    imagem: '',
+    imagem: 'public/dinossauros/Triunfosaurus-300x225.png',
     coords: [-21.6825, -51.0731], // Região do Grupo Bauru, SP
   },
   {
@@ -738,7 +738,7 @@ const dinossauros = [
     peso: '200 - 500 g',
     descricao: 'Pequeno dinossauro com estruturas tegumentares rígidas na região do ombro e filamentos semelhantes a penas no corpo, evidenciando ornamentação para exibição.',
     curiosidades: '"Ubirajara" vem do tupi e significa "senhor da lança" (referência às estruturas rígidas do ombro); "jubatus" significa com juba em latim. O fóssil ficou retido na Alemanha por anos e foi alvo de campanha #UbirajaraBelongstoNrazil.',
-    imagem: '',
+    imagem: 'public/dinossauros/U._jubatus_Reconstruction.png',
     coords: [-7.2342, -39.4089], // Crato, CE
   },
   {
@@ -752,7 +752,7 @@ const dinossauros = [
     peso: '70 - 90 kg',
     descricao: 'Sauropodomorfo basal bípede do Triássico Superior, com dentes foliados adaptados para mastigar plantas. Um dos mais completos sauropodomorphas triássicos do Brasil.',
     curiosidades: '"Unay" vem do tupi e significa "água negra"; "saurus" é lagarto; "tolentinoi" homenageia o pesquisador Tolentino Mariz de Oliveira Filho. Encontrado em São João do Polêsine, RS.',
-    imagem: '',
+    imagem: 'public/dinossauros/Unaysaurus-2-Maurilio-Oliveira_f24f.jpg',
     coords: [-29.6198, -53.4000], // São João do Polêsine, RS
   },
   {
@@ -766,7 +766,7 @@ const dinossauros = [
     peso: '15 - 20 kg',
     descricao: 'Noassaurídeo ágil com um único dedo funcional por pata, adaptação única entre os dinossauros. Vivia em ambiente de dunas e desertos internos do Cretáceo.',
     curiosidades: '"Vesper" significa tarde/oeste em latim, referindo-se ao oeste do Paraná; "saurus" é lagarto; "paranaensis" indica o Paraná. Seu único dedo funcional é a adaptação mais incomum entre os dinossauros brasileiros conhecidos.',
-    imagem: '',
+    imagem: 'public/dinossauros/Vespersaurus_paranaensis-32.png',
     coords: [-23.4273, -51.9375], // Cruzeiro do Oeste, PR
   },
   {
@@ -780,7 +780,7 @@ const dinossauros = [
     peso: '1 - 2 t (estimado)',
     descricao: 'Espinossaurídeo redescrito a partir de material já conhecido, representando mais um membro da diversa fauna de espinossaurídeos do Brasil. Especializado na captura de peixes.',
     curiosidades: '"Ypupiara" vem do tupi e significa "o que vive na água" ou "monstro aquático", alusão ao boto da mitologia tupi. "Lopai" homenageia o curador de paleontologia Diogenes de Almeida Campos Lopa. Descrito em 2021.',
-    imagem: '',
+    imagem: 'public/dinossauros/yupiara.jpg',
     coords: [-7.1195, -40.3489], // Santana do Cariri, CE
   },
 ]
