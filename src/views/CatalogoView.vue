@@ -255,10 +255,16 @@ function limparFiltros() {
   transform:translateY(-5px);
 }
 
+.card-image{
+  background:#f8fafc;
+}
+
 .card-image img{
+  display:block;
   width:100%;
-  height:220px;
+  height:240px;
   object-fit:cover;
+  object-position:center;
 }
 
 .card-body{
