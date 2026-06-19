@@ -151,7 +151,7 @@ function limparFiltros() {
 
         <div class="card-body">
 
-          <h2>{{ dino.nome }}</h2>
+          <h2> <em>{{ dino.nome }}  </em></h2>
 
           <p class="tag">
             {{ dino.periodo }}
