@@ -211,14 +211,14 @@ const dinossauros = [
   {
      id: 16,
   nome: 'Erythrovenator jacuiensis',
-  periodo: 'Triássico, 233 - 225 MA.', 
+  periodo: 'Triássico, 233 - 225 MA.',
   dieta: 'Carnívoro',
   local: 'Sequência Candelária, Supersequência Santa Maria, Agudo, Rio Grande do Sul',
-  familia: 'Theropoda (basal)', 
+  familia: 'Theropoda (basal)',
   tamanho: 'Cerca de 2 m de comprimento',
-  peso: '10 - 15 kg', 
+  peso: '10 - 15 kg',
   descricao: 'Um dos dinossauros terópodes mais primitivos e antigos do mundo. Representa o início da linhagem dos grandes dinossauros predadores bípedes.',
-  curiosidades: '"Erythro" vem do grego para vermelho (devido ao tom avermelhado do fóssil e das rochas do sítio); "venator" significa caçador; "jacuiensis" referencia o Rio Jacuí. Descoberto no Sítio Niemeyer, no município de Agudo (RS).', 
+  curiosidades: '"Erythro" vem do grego para vermelho (devido ao tom avermelhado do fóssil e das rochas do sítio); "venator" significa caçador; "jacuiensis" referencia o Rio Jacuí. Descoberto no Sítio Niemeyer, no município de Agudo (RS).',
   imagem: '/dinossauros/erythrovenator.jpg',
   coords: [-29.6468, -53.2389] //x
   },
@@ -241,10 +241,10 @@ const dinossauros = [
   nome: 'Gamatavus antiquus',
   periodo: 'Triássico, 237 MA.',
   dieta: 'Onívoro (Insetívoro/Herbívoro)',
-  local: 'Formação Santa Maria, Dilermando de Aguiar, Rio Grande do Sul', 
+  local: 'Formação Santa Maria, Dilermando de Aguiar, Rio Grande do Sul',
   familia: 'Silesauridae (Dinossauriforme)',
   tamanho: '1,5 m de comprimento (estimado)',
-  peso: '3 - 5 kg', 
+  peso: '3 - 5 kg',
   descricao: 'Um dinossauriforme da família Silesauridae considerado um dos precursores dos dinossauros mais antigos de toda a América do Sul, descoberto a partir de um fragmento do quadril.',
   curiosidades: 'O nome significa "antigo tataravô da Picada do Gama", homenageando a localidade onde foi extraído na BR-158. Sua descoberta empurra a presença de parentes dos dinossauros no Brasil para muito antes do esperado.',
   imagem: '/dinossauros/gamatavus.jpg',
@@ -750,7 +750,7 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'Pequeno terópode noassaurídeo adaptado à vida em dunas áridas. Possuía uma anatomia podal única: caminhava apoiado em um único dedo central, enquanto os dedos laterais formavam lâminas afiadas para subjugar presas.',
   curiosidades: '"Vesper" vem do latim para oeste ou entardecer, aludindo à região do Paraná onde foi descoberto, e "paranaensis" exalta o estado. Ele é funcionalmente monodáctilo para locomoção, uma anatomia bizarra que resolveu um mistério de 1970, quando o padre Giuseppe Leonardi encontrou pegadas de "um único dedo" no Brasil e não sabia a qual animal atribuir. Dividia seu paleodeserto com o pterossauro Caiuajara dobruskii.',
   imagem: '/dinossauros/Vespersaurus_paranaensis-32.png',
-  coords: [-23.7844, -53.0731]//
+  coords: [-23.7844, -53.0731]//de2qqqqqqqqqqqqqqqqqwwwwwwjuuu\=------------------------------ penny passou aq!
 }
 ]
 
