@@ -682,7 +682,7 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   coords: [-12.8931, -38.4952]//
 },
   {
-  id: 50,
+  id: 55,
   nome: 'Trigonosaurus pricei (Inválido)',
   periodo: 'Cretáceo Superior (Maastrichtiano), ~70 MA.',
   dieta: 'Herbívoro',
