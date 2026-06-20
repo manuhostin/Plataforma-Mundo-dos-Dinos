@@ -4,7 +4,7 @@
 <template>
   <header class="header">
     <div class="header-content">
-      <div class="logo">Dinossauros Brasileiros</div>
+      <div class="logo"> <p>Dinossauros <strong>Brasileiros</strong></p></div>
       <nav class="nav-links">
         <router-link to="/" class="nav-link">Início</router-link>
         <router-link to="/mapa" class="nav-link">Mapa</router-link>
@@ -35,9 +35,12 @@
 .logo {
   font-weight: 500;
   font-size: 14px;
-  color: #1a202c;
+  color: #ffc400;
 }
+.logo strong {
+  color: #186e03;
 
+}
 .nav-links {
   display: flex;
   gap: 20px;

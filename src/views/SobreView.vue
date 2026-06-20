@@ -211,7 +211,6 @@ async function handleSubmit(e) {
   flex-direction: column;
   gap: 40px;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f6f9fc, #e8f1ff);
 }
 
 .about-header,
@@ -237,7 +236,6 @@ async function handleSubmit(e) {
   max-width: 700px;
 }
 
-/* Layout do header com imagem ao lado */
 .about-header-content {
   display: flex;
   align-items: center;
@@ -318,7 +316,7 @@ async function handleSubmit(e) {
 }
 
 .sources h2 .fa-icon {
-  color: #2d6cdf;
+  color: #134703;
   margin-right: 12px;
 }
 
@@ -339,7 +337,7 @@ async function handleSubmit(e) {
   background: #f8fafc;
   padding: 15px;
   border-radius: 12px;
-  border-left: 4px solid #2d6cdf;
+  border-left: 4px solid #066803;
   color: #475569;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -356,7 +354,7 @@ async function handleSubmit(e) {
 }
 
 .contact-section h2 .fa-icon {
-  color: #2d6cdf;
+  color: #ffd102;
   margin-right: 12px;
 }
 
@@ -385,7 +383,7 @@ async function handleSubmit(e) {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #2d6cdf;
+  border-color: #dfa72d;
   box-shadow: 0 0 0 4px rgba(45, 108, 223, 0.1);
 }
 
@@ -393,7 +391,7 @@ async function handleSubmit(e) {
   padding: 15px 30px;
   border: none;
   border-radius: 999px;
-  background: #2d6cdf;
+  background: #fca400;
   color: white;
   font-weight: 600;
   cursor: pointer;
@@ -407,7 +405,7 @@ async function handleSubmit(e) {
 }
 
 .contact-form button:hover {
-  background: #1d4fb3;
+  background: #c48002;
   transform: translateY(-2px);
 }
 

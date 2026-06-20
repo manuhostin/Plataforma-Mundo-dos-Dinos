@@ -221,13 +221,6 @@ display:flex;
 justify-content:center;
 align-items:center;
 
-background:
-linear-gradient(
-135deg,
-#f8fafc,
-#f1f5f9,
-#ecfdf5
-);
 
 }
 
@@ -236,7 +229,7 @@ linear-gradient(
 width:100%;
 max-width:900px;
 
-background:white;
+background:rgb(247, 242, 200);
 
 padding:40px;
 
