@@ -4,6 +4,7 @@ import CatalogoView from '../views/CatalogoView.vue'
 import MapaView from '../views/MapaView.vue'
 import QuizView from '../views/QuizView.vue'
 import SobreView from '../views/SobreView.vue'
+import PaginaView from '../views/PaginaView.vue'
 const routes = [
   {
     path: '/',
@@ -30,6 +31,16 @@ const routes = [
     name: 'Sobre',
     component: SobreView,
   },
+  {
+    path: '/dinossauro/:id',
+    name: 'pagina',
+    component: PaginaView,
+  },
+  {
+    path: '/pagina',
+    name: 'Pagina',
+    component: PaginaView,
+  }
 ]
 
 const router = createRouter({

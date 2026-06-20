@@ -163,53 +163,58 @@ function limparFiltros() {
 
     <div class="cards-grid">
 
-      <article
+      <router-link
         v-for="dino in dinosFiltrados"
         :key="dino.id"
-        class="card"
+        :to="`/dinossauro/${dino.id}`"
+        class="card-link"
       >
 
-        <div v-if="dino.imagem" class="card-image">
-          <img
-            :src="dino.imagem"
-            :alt="dino.nome"
-          >
-        </div>
+        <article class="card">
 
-        <div class="card-body">
+          <div v-if="dino.imagem" class="card-image">
+            <img
+              :src="dino.imagem"
+              :alt="dino.nome"
+            >
+          </div>
 
-          <h2> <em>{{ dino.nome }}  </em></h2>
+          <div class="card-body">
 
-          <p class="tag">
-            {{ dino.periodo }}
-          </p>
+            <h2> <em>{{ dino.nome }}  </em></h2>
 
-          <p class="local">
-            📍 {{ dino.local }}
-          </p>
+            <p class="tag">
+              {{ dino.periodo }}
+            </p>
 
-          <p class="description">
-            {{ dino.descricao }}
-          </p>
+            <p class="local">
+              📍 {{ dino.local }}
+            </p>
 
-          <ul class="metadata">
-            <li><strong>Dieta:</strong> {{ dino.dieta }}</li>
-            <li><strong>Família:</strong> {{ dino.familia }}</li>
-            <li><strong>Tamanho:</strong> {{ dino.tamanho }}</li>
-            <li><strong>Peso:</strong> {{ dino.peso }}</li>
-          </ul>
+            <p class="description">
+              {{ dino.descricao }}
+            </p>
 
-          <p
-            v-if="dino.curiosidades"
-            class="curiosidades"
-          >
-            <strong>Curiosidade:</strong>
-            {{ dino.curiosidades }}
-          </p>
+            <ul class="metadata">
+              <li><strong>Dieta:</strong> {{ dino.dieta }}</li>
+              <li><strong>Família:</strong> {{ dino.familia }}</li>
+              <li><strong>Tamanho:</strong> {{ dino.tamanho }}</li>
+              <li><strong>Peso:</strong> {{ dino.peso }}</li>
+            </ul>
 
-        </div>
+            <p
+              v-if="dino.curiosidades"
+              class="curiosidades"
+            >
+              <strong>Curiosidade:</strong>
+              {{ dino.curiosidades }}
+            </p>
 
-      </article>
+          </div>
+
+        </article>
+
+      </router-link>
 
     </div>
 
@@ -331,6 +336,11 @@ function limparFiltros() {
   padding:12px;
   border-radius:12px;
   background:#f8fafc;
+}
+
+.card-link{
+  text-decoration:none;
+  color:inherit;
 }
 </style>
 

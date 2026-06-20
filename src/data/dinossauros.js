@@ -754,4 +754,14 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
 }
 ]
 
+dinossauros.forEach(dino => {
+  if (!dino.galeria) {
+    dino.galeria = [
+      '/dinossauros/placeholder1.jpg',
+      '/dinossauros/placeholder2.jpg',
+      '/dinossauros/placeholder3.jpg'
+    ]
+  }
+})
+
 export default dinossauros
