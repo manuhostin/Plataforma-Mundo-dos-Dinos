@@ -281,7 +281,7 @@ const dinossauros = [
     peso: '3 - 4 t (estimado)',
     descricao: 'Material fóssil, composto principalmente por grandes dentes serrilhados, que comprova a   existência de um gigantesco predador carcharodontossaurídeo na pré-história do Nordeste.',
     curiosidades: 'Seus dentes são idênticos aos do Carcharodontosaurus da África, o que prova que o Brasil e o continente africano ainda mantinham conexões de terra ou estavam muito próximos no início do Cretáceo Superior. Dividia o topo da cadeia alimentar com o espinossaurídeo Oxalaia.',
-    imagem: 'public/dinossauros/carcharodontosaurus1.png',
+    imagem: '/dinossauros/carcharodontosaurus1.png',
     coords: [-2.4069, -44.2769], // São Luís, MA x
     emoji: 'teropode',
   },
