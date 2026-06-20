@@ -2,7 +2,7 @@ const dinossauros = [
   {
     id: 1,
     nome: 'Adamantisaurus mezzalirai',
-    periodo: 'Cretáceo, 93 - 70 MA.',
+    periodo: 'Cretáceo 93 - 70 MA.',
     dieta: 'Herbívoro',
     local: 'Formação Adamantina, Grupo Bauru, São Paulo',
     familia: 'Titanosauria',
@@ -16,7 +16,7 @@ const dinossauros = [
   {
     id: 2,
     nome: 'Amanasaurus nesbitti',
-    periodo: 'Triássico, 233 MA.',
+    periodo: 'Triássico 233 MA.',
     dieta: 'Herbívoro',
     local: 'Formação Santa Maria, Restinga Sêca,  Rio Grande do Sul',
     familia: 'Silesauridae',
@@ -30,7 +30,7 @@ const dinossauros = [
   {
     id: 3,
     nome: 'Amazonasaurus maranhensis',
-    periodo: 'Cretáceo, 125 - 113 MA.',
+    periodo: 'Cretáceo 125 - 113 MA.',
     dieta: 'Herbívoro',
     local: 'Formação Itapecuru, Bacia do Parnaíba, Itapecuru-Mirim, Maranhão',
     familia: 'Rebbachisauridae',
@@ -57,7 +57,7 @@ const dinossauros = [
   {
     id: 5,
     nome: 'Aratasaurus museunacionali',
-    periodo: 'Cretáceo, 115 - 110 MA.',
+    periodo: 'Cretáceo 115 - 110 MA.',
     dieta: 'Carnívoro',
     local: 'Formação Romualdo, Grupo Santana, Ceará',
     familia: 'Basal Coelurosauria ',
@@ -85,7 +85,7 @@ const dinossauros = [
   {
     id: 7,
     nome: 'Austroposeidon magnificus',
-    periodo: 'Cretáceo, 86 - 66 MA.',
+    periodo: 'Cretáceo 86 - 66 MA.',
     dieta: 'Herbívoro',
     local: 'Formação Adamantina, Grupo Bauru, Presidente Prudente,  São Paulo',
     familia: 'Titanosauria (Lognkosauria)',
@@ -113,7 +113,7 @@ const dinossauros = [
   {
     id: 9,
     nome: 'Baurutitan britoi',
-    periodo: 'Cretáceo, 72 - 66 MA.',
+    periodo: 'Cretáceo 72 - 66 MA.',
     dieta: 'Herbívoro',
     local: 'Formação Serra da Galga, Grupo Bauru, Minas Gerais',
     familia: 'Titanosauria',
@@ -141,7 +141,7 @@ const dinossauros = [
   {
     id: 11,
     nome: 'Brasilotitan nemophagus',
-    periodo: 'Cretáceo, 89 - 86 MA.',
+    periodo: 'Cretáceo 89 - 86 MA.',
     dieta: 'Herbívoro',
     local: 'Formação Adamantina, Grupo Bauru, Presidente Prudente, São Paulo',
     familia: 'Titanosauria',
@@ -155,7 +155,7 @@ const dinossauros = [
   {
     id: 12,
     nome: 'Buriolestes schultzi',
-    periodo: 'Triássico, 233 MA.',
+    periodo: 'Triássico 233 MA.',
     dieta: 'Carnívoro/Insectívoro',
     local: 'Formação Santa Maria, São João do Polêsine, Rio Grande do Sul',
     familia: 'Sauropodomorpha (basal)',
@@ -169,7 +169,7 @@ const dinossauros = [
   {
     id: 13,
     nome: 'Caieiria allocaudata',
-    periodo: 'Cretáceo, 72 - 66 MA.',
+    periodo: 'Cretáceo 72 - 66 MA.',
     dieta: 'Herbívoro',
     local: 'Formação Serra da Galga, Grupo Bauru, Uberaba, Minas Gerais',
     familia: 'Titanosauria',
@@ -183,7 +183,7 @@ const dinossauros = [
   {
     id: 14,
     nome: 'Cratoavis cearensis',
-    periodo: 'Cretáceo, 125 MA.',
+    periodo: 'Cretáceo 125 MA.',
     dieta: 'Insetívoro',
     local: 'Formação Crato, Grupo Santana, Nova Olinda, Ceará',
     familia: 'Enantiornithes',
@@ -197,7 +197,7 @@ const dinossauros = [
   {
     id: 15,
     nome: 'Dasosaurus tocantinensis',
-    periodo: 'Cretáceo, 125 - 113 MA.',
+    periodo: 'Cretáceo 125 - 113 MA.',
     dieta: 'Herbívoro',
     local: 'Formação Itapecuru, Bacia do Parnaíba, Davinópolis, Maranhão',
     familia: 'Titanosauriformes (Somphospondyli)',
@@ -211,7 +211,7 @@ const dinossauros = [
   {
      id: 16,
   nome: 'Erythrovenator jacuiensis',
-  periodo: 'Triássico, 233 - 225 MA.',
+  periodo: 'Triássico 233 - 225 MA.',
   dieta: 'Carnívoro',
   local: 'Sequência Candelária, Supersequência Santa Maria, Agudo, Rio Grande do Sul',
   familia: 'Theropoda (basal)',
@@ -239,7 +239,7 @@ const dinossauros = [
   {
      id: 18,
   nome: 'Gamatavus antiquus',
-  periodo: 'Triássico, 237 MA.',
+  periodo: 'Triássico 237 MA.',
   dieta: 'Onívoro (Insetívoro/Herbívoro)',
   local: 'Formação Santa Maria, Dilermando de Aguiar, Rio Grande do Sul',
   familia: 'Silesauridae (Dinossauriforme)',
@@ -295,7 +295,7 @@ const dinossauros = [
   {
   id: 24,
   nome: 'Gnathovorax cabreirai',
-  periodo: 'Triássico, 233 MA.',
+  periodo: 'Triássico 233 MA.',
   dieta: 'Carnívoro',
   local: 'Formação Santa Maria, São João do Polêsine, Rio Grande do Sul',
   tamanho: '3 m de comprimento',
@@ -323,7 +323,7 @@ const dinossauros = [
     {
   id: 26,
   nome: 'Gondwanax paraisensis',
-  periodo: 'Triássico, 237 MA.',
+  periodo: 'Triássico 237 MA.',
   dieta: 'Herbívoro / Onívoro',
   local: 'Formação Santa Maria, Paraíso do Sul, Rio Grande do Sul',
   familia: 'Silesauridae (Dinossauromorfo)',
