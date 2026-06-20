@@ -12,6 +12,8 @@ const dinossauros = [
     curiosidades: 'O nome do gênero faz referência à Formação Adamantina, onde seus fósseis foram encontrados. O nome específico "mezzalirai" homenageia o paleontólogo brasileiro Sérgio Mezzalira. É conhecido por fósseis relativamente fragmentários, o que dificulta estimativas precisas de tamanho.',
     imagem: '/dinossauros/adamantisaurusmezzalirai.jpg',
     coords: [-21.6000, -50.1000], // Adamantina, SP x
+    emoji: 'sauropode',
+
   },
   {
     id: 2,
@@ -26,6 +28,7 @@ const dinossauros = [
     curiosidades: '"Amana" vem do tupi e significa chuva, enquanto "saurus" deriva do grego e quer dizer lagarto. O nome é uma referência direta ao Evento Pluvial Carniano.',
     imagem: '/dinossauros/amanassauro.jpg',
     coords: [-29.8211, -53.3753], // Santa Maria, RS x
+    emoji: 'teropode',
   },
   {
     id: 3,
@@ -39,7 +42,8 @@ const dinossauros = [
     descricao: 'Sauropode de médio porte, com pescoço longo e cauda robusta. Descoberto em rochas da Formação Itapecuru no Maranhão.',
     curiosidades: 'É o primeiro dinossauro encontrado na Amazônia Legal. Seu nome homenageia o estado do Maranhão e a região amazônica.',
     imagem: '/dinossauros/amazonsaurus1.jpg',
-    coords: [-3.3912, -44.3592], // Região do Maranhão x
+    coords: [-3.3912, -44.3592], // Região do Maranhão x,
+    emoji: 'sauropode',
   },
 {
   id: 4,
@@ -52,7 +56,8 @@ const dinossauros = [
   descricao: 'Espinossaurídeo com focinho estreito, crista sagital sobre o pré-maxilar e dentes cônicos adaptados para capturar peixes. Evidências fósseis indicam que também se alimentava ocasionalmente de pterossauros.',
   curiosidades: '"Angaturama" vem do tupi e significa "espírito protetor" ou "nobre". O sobrenome "limai" homenageia o paleontólogo Murilo Rodolfo de Lima, que informou os pesquisadores sobre o fóssil em 1991. Descrito em 1996, é considerado por muitos paleontólogos como o mesmo animal que o Irritator, mas com o nome Angaturama tendo prioridade.',
   imagem: '/dinossauros/angaturama.jpg',
-  coords: [-7.1500, -39.7300] // x
+  coords: [-7.1500, -39.7300], // x
+  emoji: 'teropode',
 },
   {
     id: 5,
@@ -67,6 +72,7 @@ const dinossauros = [
     curiosidades: 'O nome é uma homenagem ao Museu Nacional do Rio de Janeiro, que sofreu um incêndio devastador em 2018. O fóssil do Aratasaurus resistiu ao incêndio.',
     imagem: '/dinossauros/Aratasaurus_museunacionali.jpg',
     coords: [-7.1195, -40.3489], // Santana do Cariri, CE x
+    emoji: 'teropode',
   },
   {
     id: 6,
@@ -81,6 +87,7 @@ const dinossauros = [
     curiosidades: 'Era herbívoro pacífico, passando a maior parte do dia engolindo grandes quantidades de folhas sem mastigar, usando seus dentes em formato de lápis apenas para arrancar a vegetação.',
     imagem: '/dinossauros/arrudatitan.jpg',
     coords: [-21.3283, -48.6311], // Cândido Rodrigues, SP x
+    emoji: 'sauropode',
   },
   {
     id: 7,
@@ -95,6 +102,7 @@ const dinossauros = [
     curiosidades: 'Seu nome significa "poseidon do sul", em referência ao deus grego do mar e à sua localização no hemisfério sul. Foi descrito em 2016 a partir de material fóssil coletado em São Paulo.',
     imagem: '/dinossauros/Austroposeidon_LM.jpg',
     coords: [-22.1225, -51.3889], // Região de Adamantina, SP x
+    emoji: 'sauropode',
   },
 {
   id: 8,
@@ -108,7 +116,8 @@ const dinossauros = [
   descricao: 'Pequeno sauropodomorfo basal do Triássico, com membros robustos e hábito provavelmente bípede. Considerado um dos primeiros herbívoros do grupo dos dinossauros, sua dentição já apresentava adaptações para processar vegetação.',
   curiosidades: '"Bagual" é uma palavra regional gaúcha que significa "cavalo selvagem" ou "animal forte", em referência à robustez de seus membros posteriores. O nome específico homenageia Agudo (RS), município onde o fóssil foi encontrado em 2007. Seu esqueleto semi-articulado foi descoberto em posição incomum (com as patas traseiras levantadas) e ajudou a entender a transição dos primeiros dinossauros para os grandes herbívoros quadrúpedes.',
   imagem: '/dinossauros/bagualosaurus.png',
-  coords: [-29.6425, -53.2700] // x
+  coords: [-29.6425, -53.2700], // x
+  emoji: 'teropode',
 },
   {
     id: 9,
@@ -123,6 +132,7 @@ const dinossauros = [
     curiosidades: 'O nome do gênero homenageia o Grupo Bauru e a espécie homenageia o influente paleontólogo brasileiro Ignácio Aureliano Machado Brito. Seus fósseis foram coletados na famosa região de Peirópolis, em Uberaba.',
     imagem: '/dinossauros/baurutitan.png',
     coords: [-19.7417, -47.9386], // Uberaba, MG x
+    emoji: 'sauropode',
   },
 {
   id: 10,
@@ -136,7 +146,8 @@ const dinossauros = [
   descricao: 'Pequeno ceratossauro bípede notável por não possuir dentes — uma característica raríssima entre os dinossauros carnívoros, sugerindo dieta onívora ou herbívora.',
   curiosidades: 'Homenageia Bertha Lutz, pioneira do feminismo e da ciência brasileira, e a Princesa Leopoldina. É um dos únicos dinossauros sem dentes encontrados no Brasil. Descrito em 2021, compartilhou o paleodeserto com o Vespersaurus paranaensis e o pterossauro Caiuajara dobruskii.',
   imagem: '/dinossauros/berthassauro.jpg',
-  coords: [-23.7600, -53.0500] // x
+  coords: [-23.7600, -53.0500], // x
+  emoji: 'teropode',
 },
   {
     id: 11,
@@ -151,6 +162,7 @@ const dinossauros = [
     curiosidades: '"Brasil" + "titan" (gigante) + "nemo" (floresta) + "phagus" (comer): "o titã gigante comedor de florestas do Brasil". Descrito em 2013 a partir de material da Formação Adamantina. Ele foi encontrado as margens da Rodovia Raposo Tavares, próximo a Presidente Prudente, SP.',
     imagem: '/dinossauros/brasilotitan.jpg',
     coords: [-22.1264, -51.3686], // Região de Presidente prudente, SP x
+    emoji: 'sauropode'
   },
   {
     id: 12,
@@ -165,6 +177,7 @@ const dinossauros = [
     curiosidades: 'Seu nome homenageia a família Buriol, proprietária do sítio onde o fóssil foi encontrado, e o paleontólogo Ruben Schultz. Encontrado em São João do Polêsine, RS.',
     imagem: '/dinossauros/buriolestes.jpg',
     coords: [-29.6698, -53.4700], // São João do Polêsine, RS x
+    emoji: 'teropode',
   },
   {
     id: 13,
@@ -179,6 +192,7 @@ const dinossauros = [
     curiosidades: 'O nome genérico homenageia a famosa localidade de "Caieira" (Pedra 1) em Peirópolis, onde Llewellyn Price coletou o fóssil. "allocaudata" une o grego allos (estranha/diferente) e o latim cauda (cauda), significando "cauda estranha de Caieira". Ele foi escavado na década de 1950, originalmente fazia parte do material do Trigonosaurus pricei. Apenas em 2022, novas análises do Laboratório de Paleontologia da USP provaram que as vértebras pertenciam a um dinossauro totalmente novo e único',
     imagem: '/dinossauros/caieiria2.png',
     coords: [-19.5925, -48.0172], // Uberaba, MG x
+    emoji: 'sauropode',
   },
   {
     id: 14,
@@ -193,6 +207,7 @@ const dinossauros = [
     curiosidades: '"Crato" refere-se à Formação Crato (unidade geológica onde foi achada) e "avis" significa ave. O fóssil foi descoberto em Nova Olinda (CE) e impressiona por preservar um par de penas da cauda extremamente longas. É uma das aves mesozoicas mais antigas do Brasil.',
     imagem: '/dinossauros/cratoaviss.png',
     coords: [ -7.123172, -39.697222], // nova olinda x
+    emoji: 'ave',
   },
   {
     id: 15,
@@ -207,6 +222,7 @@ const dinossauros = [
     curiosidades: 'Embora "tocantinensis" faça alusão à Região Tocantina e ao rio próximo, o fóssil foi descoberto em Davinópolis (MA) durante obras rodoferroviárias. "Dasosaurus" significa "lagarto da floresta", referindo-se à Amazônia Legal.',
     imagem: '/dinossauros/dasosaurus.jpg',
     coords: [-5.5539, -47.4167], // Davinópolis, MA x
+    emoji: 'sauropode',
   },
   {
      id: 16,
@@ -220,7 +236,8 @@ const dinossauros = [
   descricao: 'Um dos dinossauros terópodes mais primitivos e antigos do mundo. Representa o início da linhagem dos grandes dinossauros predadores bípedes.',
   curiosidades: '"Erythro" vem do grego para vermelho (devido ao tom avermelhado do fóssil e das rochas do sítio); "venator" significa caçador; "jacuiensis" referencia o Rio Jacuí. Descoberto no Sítio Niemeyer, no município de Agudo (RS).',
   imagem: '/dinossauros/erythrovenator.jpg',
-  coords: [-29.6468, -53.2389] //x
+  coords: [-29.6468, -53.2389], //x
+  emoji: 'teropode',
   },
   {
   id: 17,
@@ -234,7 +251,8 @@ const dinossauros = [
   descricao: 'Icnotáxon (dinossauro conhecido apenas por pegadas fósseis) encontrado em dunas fósseis da Formação Botucatu. As pegadas sugerem um animal bípede, veloz e adaptado a climas áridos.',
   curiosidades: 'O nome homenageia o paleontólogo James Farlow. Suas pegadas ficaram famosas por estarem preservadas em arenito largamente utilizado para pavimentar as calçadas de Araraquara (SP). Inspirou um dinossauro na animação Jurassic World: Teoria do Caos.',
   imagem: '/dinossauros/farlowichnus1.png',
-  coords: [-21.7944, -48.1756] // Araraquara, SP x
+  coords: [-21.7944, -48.1756], // Araraquara, SP x
+  emoji: 'teropode',
 },
   {
      id: 18,
@@ -248,7 +266,8 @@ const dinossauros = [
   descricao: 'Um dinossauriforme da família Silesauridae considerado um dos precursores dos dinossauros mais antigos de toda a América do Sul, descoberto a partir de um fragmento do quadril.',
   curiosidades: 'O nome significa "antigo tataravô da Picada do Gama", homenageando a localidade onde foi extraído na BR-158. Sua descoberta empurra a presença de parentes dos dinossauros no Brasil para muito antes do esperado.',
   imagem: '/dinossauros/gamatavus.jpg',
-  coords: [-29.7042, -54.2183] // Dilermando de Aguiar, RS x
+  coords: [-29.7042, -54.2183],// Dilermando de Aguiar, RS x
+  emoji: 'teropode',
   },
   {
     id: 20,
@@ -262,7 +281,8 @@ const dinossauros = [
     descricao: 'Material fóssil, composto principalmente por grandes dentes serrilhados, que comprova a   existência de um gigantesco predador carcharodontossaurídeo na pré-história do Nordeste.',
     curiosidades: 'Seus dentes são idênticos aos do Carcharodontosaurus da África, o que prova que o Brasil e o continente africano ainda mantinham conexões de terra ou estavam muito próximos no início do Cretáceo Superior. Dividia o topo da cadeia alimentar com o espinossaurídeo Oxalaia.',
     imagem: 'public/dinossauros/carcharodontosaurus1.png',
-    coords: [-2.4069, -44.2769] // São Luís, MA x
+    coords: [-2.4069, -44.2769], // São Luís, MA x
+    emoji: 'teropode',
   },
   {
      id: 21,
@@ -277,6 +297,7 @@ const dinossauros = [
   curiosidades: 'Sua descoberta no Brasil é um dos pilares que reforçam o forte intercâmbio faunístico entre a América do Sul e a África antes da separação total dos continentes. Curiosamente, quando adultos, alguns parentes desse grupo perdiam os dentes e desenvolviam um bico córneo, indicando uma mudança drástica na dieta.',
     imagem: '/dinossauros/Elaphrosaurus1.jpg.png',
     coords: [-2.4697, -44.3792], // São Luís, MA x
+    emoji: 'teropode',
   },
   {
     id: 22,
@@ -290,7 +311,9 @@ const dinossauros = [
   descricao: 'Fóssil composto por uma vértebra caudal perfeitamente preservada que comprova a existência de um megaraptorano em Minas Gerais. Eram carnívoros ágeis que atacavam usando garras frontais em forma de foice.',
   curiosidades: 'Ao contrário de outros grandes terópodes que atacavam usando apenas a mordida, os megaraptoranos tinham braços longos e fortes equipados com uma garra gigantesca no primeiro dedo. O fóssil foi encontrado em Peirópolis, distrito de Uberaba, que é considerada a Terra dos Dinossauros do Brasil.',
   imagem: '/dinossauros/Megaraptora.png',
-  coords: [-19.7495, -47.7490] // Peirópolis, Uberaba, MG x
+  coords: [-19.7495, -47.7490], // Peirópolis, Uberaba, MG x
+    emoji: 'teropode',
+
   },
   {
   id: 24,
@@ -303,7 +326,9 @@ const dinossauros = [
   descricao: 'O esqueleto de dinossauro predador mais completo do Brasil e um dos mais preservados do mundo. Era o topo de cadeia do seu ecossistema, possuindo dentes serrilhados e garras afiadas.',
   curiosidades: '"Gnathovorax" significa "mandíbula voraz" em grego e "cabreirai" homenageia o paleontólogo Sérgio Furtado Cabreira. O fóssil foi descoberto com quase 100% dos ossos preservados, incluindo o crânio intacto, permitindo até mesmo reconstruir o formato do seu cérebro por tomografia.',
   imagem: '/dinossauros/gnathovorax1.jpg',
-  coords: [-29.6264, -53.4815] //  São João do Polêsine - RSx
+  coords: [-29.6264, -53.4815], //  São João do Polêsine - RSx
+    emoji: 'teropode',
+
 },
   {
    id: 25,
@@ -317,7 +342,9 @@ const dinossauros = [
   descricao: 'Um dos menores e mais gráceis titanossauros descritos no Brasil. Possui um esqueleto pós-craniano impressionantemente completo, o que ajudou a desvendar a evolução dos saurópodes sul-americanos.',
   curiosidades: '"Gondwana" evoca o antigo supercontinente do sul e "titan" significa gigante. O nome "faustoi" é uma homenagem direta ao paleontólogo Fausto Luiz de Souza Cunha, do Museu Nacional, responsável por salvar e coletar o fóssil após sua descoberta em 1983.',
   imagem: '/dinossauros/gondwanatan.jpg',
-  coords: [-22.0789, -51.4731] // Alvares Machado, SP x
+  coords: [-22.0789, -51.4731], // Alvares Machado, SP x
+  emoji: 'sauropode',
+
   },
 
     {
@@ -332,7 +359,9 @@ const dinossauros = [
   descricao: 'Um dos dinossauromorfos mais antigos do mundo, considerado um precursor direto dos dinossauros. Seu fóssil traz pistas cruciais sobre as primeiras adaptações locomotoras do grupo.',
   curiosidades: 'O nome significa "Senhor de Gondwana de Paraíso do Sul". Foi descoberto pelo médico Pedro Lucas P. Aurélio e doado ao CAPPA/UFSM. O osso de sua bacia (sacro) surpreendeu os cientistas por possuir três vértebras fundidas, uma característica avançada de dinossauro encontrada em um animal extremamente antigo.',
   imagem: '/dinossauros/gondwanax.png',
-  coords: [-29.6644, -53.1415] // Paraíso do Sul, RS x
+  coords: [-29.6644, -53.1415], // Paraíso do Sul, RS x
+    emoji: 'teropode',
+
 },
 
 
@@ -348,7 +377,9 @@ const dinossauros = [
   descricao: 'Dinossauro basal do Triássico Superior cuja anatomia mescla traços de terópodes e sauropodomorfos, sendo crucial para desvendar os primeiros passos da evolução dos saurísquios.',
   curiosidades: 'O nome "Guaiba" não vem do lago, mas sim do projeto ambiental "Pró-Guaíba", que financiou as expedições científicas. O espécime tipo é famoso mundialmente por ter sido descoberto articulado e em "posição de descanso", com as pernas dobradas sob o corpo, indicando comportamento aviário primitivo há 230 milhões de anos.',
   imagem: '/dinossauros/Guaibasaurus_NT.jpg',
-  coords: [-29.6791, -52.7915] //  Candelária, RS x
+  coords: [-29.6791, -52.7915], //  Candelária, RS x
+    emoji: 'teropode',
+
 },
 
  {
@@ -363,7 +394,9 @@ const dinossauros = [
   descricao: 'Um dos menores titanossauros do mundo. Seu tamanho extremamente reduzido em relação aos seus parentes gigantescos é um dos casos mais evidentes de nanismo ecológico em ecossistemas continentais.',
   curiosidades: '"Ibirania" une "Ibirá" (cidade paulista do achado) com "ania" (do tupi, que remete a caminhar/vagar), significando "aquela que vaga por Ibirá". "Parva" significa pequena em latim. Seus ossos mostram que, apesar do tamanho de um bezerro, o indivíduo encontrado já era um adulto totalmente maduro.',
   imagem: '/dinossauros/ibirania1.jpg',
-  coords: [-21.1485, -49.2550]
+  coords: [-21.1485, -49.2550],
+    emoji: 'teropode',
+
 },
   {
 id: 29,
@@ -377,7 +410,9 @@ peso: '1,5 - 2,5 t (estimado)',
 descricao: 'Espinossaurídeo com crânio longo e dentes cônicos adaptados para capturar peixes e pequenas presas terrestres. Alguns pesquisadores sugerem que o material atribuído a Angaturama limai pode pertencer ao mesmo indivíduo de Irritator challengeri, embora isso ainda seja debatido.',
 curiosidades: 'O nome surgiu da irritação dos paleontólogos ao descobrirem que o fóssil havia sido adulterado com gesso antes de chegar aos cientistas. "Challengeri" homenageia o personagem Professor Challenger, de Arthur Conan Doyle. Estudos recentes indicam que sua mandíbula possuía uma mobilidade incomum para um terópode, o que pode ter facilitado a captura e ingestão de peixes relativamente grandes.',
 imagem: '/dinossauros/irritator.jpg',
-coords: [-7.1856, -40.4684] //santana do cariri x
+coords: [-7.1856, -40.4684] ,//santana do cariri x
+    emoji: 'teropode',
+
 },
 
  {
@@ -392,7 +427,9 @@ coords: [-7.1856, -40.4684] //santana do cariri x
   descricao: 'Um dos precursores de dinossauros ornitísquios mais antigos do planeta. Sua descoberta preenche uma lacuna evolutiva de 10 milhões de anos e reforça o Rio Grande do Sul como o berço global do grupo.',
   curiosidades: '"Itaguyra" une os termos tupi para "pássaro de pedra", e "occulta" significa escondida em latim. O nome brinca com o fato de o fóssil ter passado décadas misturado e "escondido" em gavetas da UFRGS antes de ser identificado por tomografia.',
   imagem: '/dinossauros/itaguyra.jpg',
-  coords: [-29.7121, -52.4283] // Santa Cruz do Sul, RS x
+  coords: [-29.7121, -52.4283], // Santa Cruz do Sul, RS x
+    emoji: 'teropode',
+
 },
 
  {
@@ -407,7 +444,9 @@ coords: [-7.1856, -40.4684] //santana do cariri x
   descricao: 'Um dinossauro saurópode pertencente à rara família Rebbachisauridae. Sua descoberta indica uma fascinante ligação biogeográfica com as faunas que habitavam o norte da África no mesmo período.',
   curiosidades: 'O nome significa "lagarto da praia de Itapeua", onde os termos tupis ita-peva significam "pedra chata" ou "laje de pedra". "cajapioensis" homenageia o município de Cajapió (MA). Os fósseis originais foram coletados na zona entremarés, ficando submersos durante a maré alta, o que exigiu um resgate paleontológico rápido.',
   imagem: '/dinossauros/itapeuasaurus.jpg',
-  coords:  [-2.5500, -44.7800] // Cajapió, MA x
+  coords:  [-2.5500, -44.7800] ,// Cajapió, MA x
+  emoji: 'sauropode',
+
 },
 {
   id: 32,
@@ -420,7 +459,9 @@ coords: [-7.1856, -40.4684] //santana do cariri x
   descricao: 'Abelissaurídeo de médio porte que habitou o interior paulista no fim da era dos dinossauros. Seus fósseis incluem ossos da bacia e três vértebras da cauda.',
   curiosidades: 'O nome do gênero faz alusão a Kurupi, o deus guarani da fertilidade e da sexualidade, pelo fato curioso de o fóssil ter sido descoberto próximo a um motel em Monte Alto (SP). Já "itaata" vem do tupi para "rocha dura", indicando a matriz de arenito cimentado onde os ossos estavam preservados.',
   imagem: '/dinossauros/kurupi.jpg',
-  coords: [-21.2612, -48.4984] // Monte Alto, SP x
+  coords: [-21.2612, -48.4984] ,// Monte Alto, SP x
+    emoji: 'teropode',
+
 },
   {
   id: 33,
@@ -434,7 +475,9 @@ coords: [-7.1856, -40.4684] //santana do cariri x
   descricao: 'A ave da linhagem moderna (Ornithuromorpha) mais antiga já registrada em toda a América do Sul. Sua descoberta prova que os ancestrais diretos dos pássaros atuais já diversificavam no Brasil há 115 milhões de anos.',
   curiosidades: '"Kariri" homenageia o povo indígena Kariri; "avis" é ave e "mater" significa mãe, por ser a ave mais antiga da sua linhagem no continente. O fóssil, composto por um pé direito isolado, foi extraído na Mina Pedra Branca, em Nova Olinda (CE). Seus dedos robustos e garras muito curvas sugerem hábitos terrestres e corredores, similares aos das emas atuais.',
   imagem: '/dinossauros/kaririavis.jpg',
-  coords: [-7.1000, -39.000] //Nova Olinda, CE x
+  coords: [-7.1000, -39.000] ,//Nova Olinda, CE x
+  emoji: 'ave',
+
 },
 
   {
@@ -449,7 +492,9 @@ peso: '90 - 100 kg',
 descricao: 'Um dos mais antigos saurópodomorfos de pescoço alongado conhecidos. Três esqueletos articulados foram encontrados juntos, fornecendo evidências de comportamento gregário entre os primeiros dinossauros herbívoros.',
 curiosidades: '"Macro" significa grande e "collum" significa pescoço em latim. "Itaquii" homenageia José Jerundino Machado Itaqui, um dos fundadores do CAPPA/UFSM. Estudos indicam que Macrocollum representa uma das evidências mais antigas conhecidas de invasão pneumática dos ossos por sacos aéreos, característica que mais tarde ajudaria os saurópodes gigantes a sustentar seus enormes corpos.',
 imagem: '/dinossauros/macrollum.jpg',
-coords: [-29.6231, -53.2844] // Agudo, RS x
+coords: [-29.6231, -53.2844] ,// Agudo, RS x
+ emoji: 'teropode',
+
   },
 {
   id: 35,
@@ -463,7 +508,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: "Um dos dinossauros mais icônicos do Brasil. Seus fósseis revelaram osteodermas dérmicas, cuja função ainda é debatida — defesa, termorregulação ou reserva mineral.",
   curiosidades: "\"Maxakali\" homenageia a tribo indígena mineira e \"topai\" seu deus criador. Foi o primeiro dinossauro de grande porte montado em tamanho real no país. Seu holótipo foi totalmente destruído no incêndio do Museu Nacional em 2018, mas réplicas foram preservadas em outras instituições.",
   imagem: "/dinossauros/maxakalisaurus1.jpg",
-  coords: [-19.3444, -49.3361] //x
+  coords: [-19.3444, -49.3361] ,//x
+  emoji: 'sauropode',
+
 },
 {
   id: 36,
@@ -477,7 +524,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: "Pequeno celurossauro carnívoro conhecido pela preservação excepcional de tecidos moles petrificados em nódulos calcários, incluindo vestígios de intestino, fígado e fibras musculares.",
   curiosidades: "O nome significa 'quadril maravilhoso assimétrico' — do latim 'mirus' (maravilhoso) e grego 'ischion' (ísquio), em referência à assimetria dos ossos pélvicos. Seu holótipo foi retirado ilegalmente do Brasil e hoje está no Museu de História Natural de Karlsruhe, Alemanha, sendo um caso emblemático de contrabando de fósseis brasileiros.",
   imagem: "/dinossauros/mirischia.jpg",
-  coords: [-7.1886, -39.7429] //x
+  coords: [-7.1886, -39.7429] ,//x
+    emoji: 'teropode',
+
 },
 
   {
@@ -492,7 +541,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: "Uma ave mesozoica com a preservação tridimensional do crânio mais completa já descoberta. Funciona como um 'elo perdido' que revela como o cérebro e as capacidades cognitivas das aves evoluíram, combinando um crânio de geometria moderna com características cerebrais arcaicas.",
   curiosidades: "O nome homenageia o paleontólogo brasileiro William Nava, descobridor do sítio em Presidente Prudente (SP), e a deusa grega Héstia. Por meio de microtomografias de raios-X, os cientistas reconstruíram seu cérebro e ouvido interno, revelando que ele possuía um cérebro maior que o do Archaeopteryx, mas com um cerebelo menos desenvolvido, indicando capacidades cognitivas intermediárias entre as aves primitivas e as modernas.",
   imagem: "/dinossauros/navaornis.png",
-  coords: [-22.1220, -51.4050] //x
+  coords: [-22.1220, -51.4050], //x
+  emoji:'ave',
+
 },
   {
     id: 38,
@@ -506,8 +557,11 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'Um dos dinossauros mais antigos do Brasil, este pequeno predador bípede possuía pernas longas e ágeis, adaptadas para a corrida. Seus ossos delgados e a proporção entre canela e coxa indicam que era um animal cursorial.',
   curiosidades: '"Nhandu-mirim" vem do tupi-guarani e significa "pequena ema", uma alusão às suas pernas de ave corredora. O nome específico "waldsangae" homenageia o Sítio Waldsanga (também conhecido como Cerro da Alemoa) em Santa Maria (RS), onde o fóssil foi encontrado em 2012. O espécime é um animal juvenil, com ossos ainda muito vascularizados e presença de cartilagem em algumas vértebras, indicando que não havia atingido a idade adulta. É considerado o terópode mais antigo já encontrado no Brasil.',
   imagem: '/dinossauros/nhandumirim.jpg',
-  coords: [-29.7011, -53.7744] //x
+  coords: [-29.7011, -53.7744], //x
+    emoji: 'teropode',
+
   },
+
 
 {
   id: 39,
@@ -521,7 +575,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'O maior dinossauro carnívoro formalmente descrito para o Brasil e o maior espinossaurídeo das Américas. Predador semiaquático especializado em peixes grandes, possuía dentes cônicos e um crânio estreito e alongado que lembra o de um crocodilo moderno.',
   curiosidades: '"Oxalaia" homenageia o orixá Oxalá, divindade das religiões de matriz africana; "quilombensis" faz referência às comunidades quilombolas da Ilha do Cajual (MA). Descoberto na icônica Laje do Coringa, seus fósseis originais foram infelizmente destruídos no incêndio do Museu Nacional em 2018, restando apenas dentes isolados e réplicas físicas em outras instituições.',
   imagem: '/dinossauros/oxalaia.jpg',
-  coords: [-2.4350, -44.4320]//x
+  coords: [-2.4350, -44.4320],//x
+    emoji: 'teropode',
+
   },
 
   {
@@ -536,8 +592,11 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'Um dos dinossauros sauropodomorfos mais antigos e primitivos conhecidos no mundo. Era um pequeno corredor bípede e ágil, cujos dentes já mostravam as primeiras adaptações para processar folhas.',
   curiosidades: '"Pampa" faz alusão à paisagem dos campos sul-grandenses e "dromaeus" significa corredor. O nome específico homenageia o icônico paleontólogo Mario Costa Barberena. Descoberto em 2006 no Sítio Janner, em Agudo (RS), seu crânio quase perfeito permitiu entender a transição anatômica de dinossauros carnívoros para herbívoros.',
   imagem: '/dinossauros/pampadromaeus.jpg',
-  coords: [-29.6234, -53.2189] //agudo x
+  coords: [-29.6234, -53.2189], //agudo x
+    emoji: 'teropode',
+
 },
+
  {
   id: 41,
   nome: 'Pycnonemosaurus nevesi',
@@ -550,7 +609,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'O maior dinossauro carnívoro estritamente terrestre descrito no Brasil e o maior abelissaurídeo formalmente conhecido. Predador bípede de crânio robusto, braços extremamente curtos e vestigiais, e pernas poderosas adaptadas para caçar grandes titanossauros.',
   curiosidades: '"Pycnonemosaurus" une o grego "pycnos" (denso) com o latim "nemus" (vegetação) — "lagarto da floresta densa", em referência ao Mato Grosso. "nevesi" homenageia o geólogo José Rubens Neves. Seus fósseis foram encontrados em 1952 por Llewellyn Ivor Price, mas só foram descritos em 2002 por Alexander Kellner e Diógenes de Almeida Campos. Uma reavaliação de 2017 elevou seu tamanho estimado de 7 m para 8,9 m, tornando-o o maior abelissaurídeo conhecido.',
   imagem: '/dinossauros/pycnonemosaurus.jpg',
-  coords: [-15.4608, -55.7497] //x
+  coords: [-15.4608, -55.7497], //x
+    emoji: 'teropode',
+
 },
   {
   id: 42,
@@ -564,7 +625,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'Um dinossauriforme silessaurídeo de pequeno porte. Era quadrúpede e possuía uma mandíbula com ponta desprovida de dentes, formando um bico córneo semelhante ao das tartarugas — uma das primeiras adaptações para a herbivoria no registro fóssil.',
   curiosidades: '"Saci" homenageia o clássico personagem do folclore brasileiro que tem apenas uma perna. O nome foi escolhido porque, bizarramente, os cientistas desenterraram 12 fêmures no sítio paleontológico, todos da perna direita e nenhum da esquerda. "Agudoensis" referencia o município de Agudo (RS), onde o fóssil foi descoberto em 2001 e descrito em 2006 pelos paleontólogos Max Langer e Jorge Ferigolo.',
   imagem: '/dinossauros/sacissauro.jpg',
-  coords: [-29.6198, -53.2495] //x
+  coords: [-29.6198, -53.2495], //x
+    emoji: 'teropode',
+
 },
   {
   id: 43,
@@ -578,7 +641,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'Um dos dinossauros mais extraordinários do mundo. O fóssil do holótipo (um juvenil) preservou tecidos moles mineralizados em fosfato, incluindo fibras musculares estriadas, vasos sanguíneos e epiderme, permitindo estudos únicos sobre a anatomia de dinossauros.',
   curiosidades: '"Santanaraptor" significa "predador da Formação Santana". "placidus" não significa pacífico, mas homenageia o Professor Plácido Cidade Nuvens, fundador do Museu de Paleontologia de Santana do Cariri. Descoberto em 1991 e descrito em 1999, é considerado o tiranossauroide mais basal do hemisfério sul, sendo um "avô" evolutivo do Tyrannosaurus rex. A preservação de tecidos moles é tão excepcional que os paleontólogos chegaram a encontrar estruturas que podem ser células sanguíneas.',
   imagem: '/dinossauros/santanaraptor.jpg',
-  coords: [-7.1840, -40.4575] //x
+  coords: [-7.1840, -40.4575] ,//x
+    emoji: 'teropode',
+
 },
  {
   id: 44,
@@ -592,7 +657,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'Um dos dinossauros verdadeiros mais antigos do planeta. Sua anatomia revela os primeiros passos da linhagem dos sauropodomorfos, mostrando a transição de pequenos carnívoros bípedes para os gigantes pescoçudos.',
   curiosidades: '"Saturnalia" refere-se à festa romana equivalente ao Carnaval brasileiro, época em que os estudos de campo foram concluídos em 1998; "tupiniquim" exalta sua origem brasileira. Três esqueletos parciais foram descobertos juntos no Cerro da Alemoa. Estudos de tomografia do seu crânio revelaram que ele possuía um pescoço ágil e comportamento de predador visualmente orientado, sugerindo que ainda consumia pequenos animais além de plantas.',
   imagem: '/dinossauros/saturnalia.jpg',
-  coords: [-29.6995, -53.7770]//
+  coords: [-29.6995, -53.7770],//
+    emoji: 'teropode',
+
 },
   {
   id: 45,
@@ -606,7 +673,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'Um dos abelissaurídeos mais antigos e completos conhecidos, com crânio excepcionalmente preservado. Representa um estágio intermediário entre os abelissaurídeos basais do Jurássico e os táxons mais derivados do Cretáceo Superior, com uma mordida mais fraca que a de seus parentes posteriores.',
   curiosidades: '"Spectro" vem do latim "spectrum" (fantasma) e "venator" (caçador) — "caçador fantasma", em referência à sua descoberta inesperada sob o esqueleto do titanossauro Tapuiasaurus macedoi. "Ragei" homenageia o paleontólogo francês Jean-Claude Rage. O padrão dos fósseis sugere que este jovem predador morreu de forma dramática, esmagado e instantaneamente soterrado após a queda do saurópode gigante sobre o seu corpo.',
   imagem: '/dinossauros/spectrovenator.jpg',
-  coords: [-16.6853, -44.3644]//
+  coords: [-16.6853, -44.3644],//
+  emoji: 'teropode',
+
 },
 
    {
@@ -621,7 +690,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'O primeiro dinossauro brasileiro a ser formalmente descrito na história da ciência. Um predador bípede, veloz e ágil que habitou os vales do Rio Grande do Sul no início da era dos dinossauros.',
   curiosidades: '"Staurikosaurus" significa "lagarto da Cruz do Sul", uma alusão à constelação celeste do hemisfério sul. O nome "pricei" homenageia o pioneiro paleontólogo gaúcho Llewellyn Ivor Price, que descobriu o esqueleto em 1936. O fóssil ficou guardado nos Estados Unidos e só foi formalmente batizado em 1970 pelo norte-americano Edwin Colbert. Infelizmente, o holótipo original nunca retornou e permanece depositado na Universidade de Harvard.',
   imagem: '/dinossauros/staurikosaurus.jpg',
-  coords: [-29.6869, -53.8098]//
+  coords: [-29.6869, -53.8098],//
+  emoji: 'teropode',
+
 
   },
 
@@ -637,7 +708,10 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'Um dos dinossauros mais importantes do mundo. Trata-se do primeiro e mais antigo titanossauro descoberto com o crânio totalmente completo e preservado tridimensionalmente, uma raridade global para o grupo dos saurópodes.',
   curiosidades: '"Tapuia" faz referência aos povos indígenas nativos do interior de Minas Gerais e "saurus" significa lagarto. O nome "macedoi" homenageia Ubirajara Alves Macedo, responsável por descobrir o sítio fossilífero. Seu crânio longo e estreito, similar ao de um cavalo, revolucionou a árvore evolutiva dos dinossauros pescoçudos. O esqueleto original de 13 metros está montado em tamanho real e exposto no Museu de Zoologia da USP.',
   imagem: '/dinossauros/tapuiasaurus.jpg',
-  coords: [-18.9186, -44.4297]//
+  coords: [-18.9186, -44.4297],//
+  emoji: 'sauropode',
+
+
   },
  {
   id: 48,
@@ -651,7 +725,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'O primeiro dinossauro carnívoro formalmente descrito para o Grupo Bauru. Abelissaurídeo de porte médio, bípede e predador de focinho curto, com vértebras cervicais extremamente pneumáticas (cheias de cavidades) e uma quilha ventral pronunciada, indicando forte musculatura do pescoço.',
   curiosidades: '"Thanos" homenageia o icônico vilão da Marvel Comics, cujo nome deriva do grego "thanatos" (morte). "Simonattoi" celebra Sérgio Luis Simonatto, descobridor do fóssil em 1995 em Ibirá (SP). A vértebra que deu origem à espécie foi encontrada em duas partes separadas por 20 anos — a primeira em 1995, a segunda em 2014, após uma ventania derrubar árvores no sítio paleontológico. Apesar do nome intimidador, não era o predador ápice de seu ecossistema: compartilhava a região com um megaraptor ainda maior, de cerca de 9 m.',
   imagem: '/dinossauros/thanos.webp',
-  coords: [-21.1425, -49.2415]//
+  coords: [-21.1425, -49.2415],//
+  emoji: 'teropode',
+
 },
  {
   id: 49,
@@ -665,7 +741,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'O primeiro dinossauro formalmente nomeado e descrito para a Bacia Potiguar. Trata-se de um titanossauro basal com características únicas nas vértebras da cauda que conferiam maior estabilidade e mobilidade lateral ao apêndice.',
   curiosidades: '"Tiamat" faz alusão à deusa dracônica primordial da mitologia babilônica, conhecida como a "mãe dos dragões", devido à sua posição basal na árvore evolutiva. "Valdecii" homenageia o Dr. Valdeci dos Santos Júnior, descobridor do sítio fossilífero. Suas vértebras caudais procélicas (côncavas na parte anterior) representam o registro mais antigo desse padrão anatômico no Brasil.[citation:3][citation:9]',
   imagem: '/dinossauros/tiamat.png',
-  coords: [-5.0744, -37.9886]//
+  coords: [-5.0744, -37.9886],//
+  emoji: 'sauropode',
+
 },
  {
   id: 50,
@@ -679,7 +757,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'Pequeno dinossauro ornitópode elasmariano com pernas ágeis adaptadas para a corrida. É o primeiro dinossauro da ordem Ornithischia formalmente nomeado no Brasil, quebrando um "jejum" científico histórico.',
   curiosidades: 'O nome do gênero é uma belíssima homenagem à personagem Tieta, do romance de Jorge Amado. O termo derbyiana celebra Orville A. Derby, pioneiro da geologia nacional. O fóssil foi coletado em Plataforma (Salvador) pelo naturalista Joseph Mawson entre 1859 e 1906, enviado para Londres e esquecido por mais de um século em gavetas do Museu de História Natural por ter sido classificado erroneamente como um dente de crocodilo.',
   imagem: '/dinossauros/tietasaura.jpg',
-  coords: [-12.8931, -38.4952]//
+  coords: [-12.8931, -38.4952],//
+  emoji: 'teropode',
+
 },
   {
   id: 55,
@@ -693,7 +773,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'Gênero extinto e considerado inválido desde 2022. Estudos filogenéticos e anatômicos detalhados comprovaram que seus fósseis originais pertenciam a duas espécies diferentes que já habitavam o catálogo brasileiro.',
   curiosidades: '"Trigono" refere-se ao formato triangular das vértebras e "pricei" homenageia o icônico paleontólogo Llewellyn Ivor Price. Em 2022, uma revisão científica histórica demonstrou que o holótipo do Trigonosaurus era na verdade um espécime de Baurutitan britoi, enquanto as vértebras da sua cauda (parátipo) foram redescritas como uma espécie totalmente nova: o Caieiria allocaudata.',
   imagem: '/dinossauros/trigonosaurus1.png',
-  coords: [-19.7435, -47.7425]//
+  coords: [-19.7435, -47.7425],//
+  emoji: 'sauropode',
+
 
   },
  {
@@ -708,7 +790,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'Inicialmente descrito como um titanossauro basal, uma reavaliação anatômica de 2026 o posiciona como um somphospondylan, possivelmente próximo ou um membro basal da radiação dos titanossauros. Sua anatomia, especialmente do ísquio e vértebras caudais, é fundamental para entender os primeiros passos evolutivos dos grandes saurópodes.',
   curiosidades: '"Triunfosaurus" significa "lagarto da Bacia de Triunfo", local da Paraíba onde seus fósseis foram exumados. O epíteto "leonardii" homenageia o padre e paleontólogo italiano Giuseppe Leonardi, pioneiro no estudo de pegadas de dinossauros no Brasil. Descrito originalmente em 2017, seu holótipo (UFRJ-DG 498) é composto por três vértebras caudais, três espinhos neurais, três chevrons e um ísquio direito. Apesar de sua fragmentação, estudos recentes sugerem que ele pode ser um dos mais antigos representantes da linhagem que deu origem aos titanossauros.',
   imagem: '/dinossauros/Triunfosaurus-300x225.png',
-  coords: [-6.5744, -38.4128]//
+  coords: [-6.5744, -38.4128],//
+  emoji: 'sauropode',
+
 },
  {
   id: 52,
@@ -722,7 +806,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'Pequeno dinossauro celurossauro com uma "juba" de filamentos semelhantes a proto-penas no dorso e, principalmente, duas longas e rígidas estruturas de queratina projetando-se de cada ombro. Acredita-se que essas estruturas incomuns fossem usadas para exibição comportamental, como atrair parceiros ou intimidar rivais. É o primeiro dinossauro não-aviário com penas descoberto no Hemisfério Sul.',
   curiosidades: '"Ubirajara" vem do tupi para "senhor da lança", em referência aos espinhos do ombro, e "jubatus" significa "com juba" em latim. O fóssil tornou-se um símbolo mundial contra o tráfico de fósseis e o colonialismo científico. Levado ilegalmente para a Alemanha em 1995, foi alvo da campanha internacional #UbirajaraBelongsToBR. Em junho de 2023, o governo alemão o devolveu oficialmente ao Brasil, e ele está em exposição no Museu de Paleontologia Plácido Cidade Nuvens, em Santana do Cariri (CE).',
   imagem: '/dinossauros/U._jubatus_Reconstruction.png',
-  coords: [-7.0945, -39.6775]//
+  coords: [-7.0945, -39.6775],//
+  emoji: 'teropode',
+
 },
  {
   id: 53,
@@ -736,7 +822,9 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'Um dos dinossauros sauropodomorfos basais mais completos e bem preservados do Triássico mundial, incluindo um crânio quase intacto. Era bípede e possuía dentes perfeitamente adaptados para cortar vegetais.',
   curiosidades: '"Unay" vem do tupi e significa "água negra", em alusão à localidade de Água Negra onde foi extraído. O nome "tolentinoi" homenageia o agricultor Tolentino Marafiga, que descobriu o esqueleto no quintal de sua casa em 1998 de forma totalmente acidental. Ele é o primeiro membro da família Unaysauridae descoberto no Brasil, tendo parentes muito próximos na Índia (como o Jaklapallisaurus), o que reforça a união dos continentes no supercontinente Pangéia.',
   imagem: '/dinossauros/Unaysaurus-2-Maurilio-Oliveira_f24f.jpg',
-  coords: [-29.5358, -53.8569]//
+  coords: [-29.5358, -53.8569],//
+  emoji: 'teropode',
+
 },
  {
   id: 54,
@@ -750,8 +838,25 @@ coords: [-29.6231, -53.2844] // Agudo, RS x
   descricao: 'Pequeno terópode noassaurídeo adaptado à vida em dunas áridas. Possuía uma anatomia podal única: caminhava apoiado em um único dedo central, enquanto os dedos laterais formavam lâminas afiadas para subjugar presas.',
   curiosidades: '"Vesper" vem do latim para oeste ou entardecer, aludindo à região do Paraná onde foi descoberto, e "paranaensis" exalta o estado. Ele é funcionalmente monodáctilo para locomoção, uma anatomia bizarra que resolveu um mistério de 1970, quando o padre Giuseppe Leonardi encontrou pegadas de "um único dedo" no Brasil e não sabia a qual animal atribuir. Dividia seu paleodeserto com o pterossauro Caiuajara dobruskii.',
   imagem: '/dinossauros/Vespersaurus_paranaensis-32.png',
-  coords: [-23.7844, -53.0731]//de2qqqqqqqqqqqqqqqqqwwwwwwjuuu\=------------------------------ penny passou aq!
-}
+  coords: [-23.7844, -53.0731],//de2qqqqqqqqqqqqqqqqqwwwwwwjuuu\=------------------------------ penny passou aq!
+  emoji: 'teropode',
+
+},
+{
+ id: 56,
+  nome: 'Uberabatitan ribeiroi',
+  periodo: 'Cretáceo Superior (Maastrichtiano), ~70 a 66 MA.',
+  dieta: 'Herbívoro',
+  local: 'Formação Serra da Galga, Grupo Bauru, Uberaba, Minas Gerais',
+  familia: 'Titanosauridae (Titanosauria)',
+  tamanho: 'Cerca de 15 a 19 m de comprimento',
+  peso: 'Cerca de 12 a 16 toneladas',
+  descricao: 'Um dos maiores dinossauros descobertos no Brasil. Era um saurópode robusto com pescoço e cauda longos, adaptado para processar grandes volumes de vegetação dura. Suas patas dianteiras não tinham dedos, funcionando como colunas maciças.',
+  curiosidades: 'Seu nome homenageia a cidade de Uberaba e o paleontólogo Luiz Carlos Borges Ribeiro. Os fósseis foram encontrados durante as obras de duplicação da rodovia BR-050. Curiosamente, foram recuperados ossos de pelo menos três indivíduos de tamanhos diferentes no mesmo local, sugerindo que andavam em grupos.',
+  imagem: '/dinossauros/image.png',
+  coords: [-19.7302, -47.9405],
+  emoji: 'sauropode'},
+
 ]
 
 dinossauros.forEach(dino => {

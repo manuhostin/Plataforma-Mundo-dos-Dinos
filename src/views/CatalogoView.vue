@@ -103,92 +103,129 @@ function limparFiltros() {
 
 <template>
   <section class="catalogo-page">
-
     <header class="catalogo-header">
-      <h1> Catálogo de Dinossauros Brasileiros</h1>
+      <h1>Catálogo de Dinossauros Brasileiros</h1>
       <p>{{ dinosFiltrados.length }} espécies encontradas</p>
     </header>
 
-    <div class="filtros">
+    <div class="filtros-container">
+      <div class="filtros-grid">
+        <!-- Busca -->
+        <div class="filtro-group">
+          <label for="busca-catalogo">Buscar</label>
+          <input
+            id="busca-catalogo"
+            v-model="busca"
+            type="text"
+            placeholder="Pesquisar dinossauro..."
+            class="filtro-input"
+          />
+        </div>
 
-      <input
-        v-model="busca"
-        type="text"
-        placeholder="Pesquisar dinossauro..."
-      >
+        <!-- Período -->
+        <div class="filtro-group">
+          <label for="periodo-catalogo">Período</label>
+          <select
+            id="periodo-catalogo"
+            v-model="periodoSelecionado"
+            class="filtro-select"
+          >
+            <option value="">Todos</option>
+            <option
+              v-for="periodo in periodos"
+              :key="periodo"
+              :value="periodo"
+            >
+              {{ periodo }}
+            </option>
+          </select>
+        </div>
 
-      <select v-model="periodoSelecionado">
-        <option value="">Todos os períodos</option>
-        <option
-          v-for="periodo in periodos"
-          :key="periodo"
-          :value="periodo"
-        >
-          {{ periodo }}
-        </option>
-      </select>
+        <!-- Dieta -->
+        <div class="filtro-group">
+          <label for="dieta-catalogo">Dieta</label>
+          <select
+            id="dieta-catalogo"
+            v-model="dietaSelecionada"
+            class="filtro-select"
+          >
+            <option value="">Todos</option>
+            <option
+              v-for="dieta in dietas"
+              :key="dieta"
+              :value="dieta"
+            >
+              {{ dieta }}
+            </option>
+          </select>
+        </div>
 
-      <select v-model="dietaSelecionada">
-        <option value="">Todas as dietas</option>
-        <option
-          v-for="dieta in dietas"
-          :key="dieta"
-          :value="dieta"
-        >
-          {{ dieta }}
-        </option>
-      </select>
+        <!-- Estado -->
+        <div class="filtro-group">
+          <label for="estado-catalogo">Estado</label>
+          <select
+            id="estado-catalogo"
+            v-model="estadoSelecionado"
+            class="filtro-select"
+          >
+            <option value="">Todos</option>
+            <option
+              v-for="estado in estados"
+              :key="estado"
+              :value="estado"
+            >
+              {{ estado }}
+            </option>
+          </select>
+        </div>
 
-      <select v-model="estadoSelecionado">
-        <option value="">Todos os estados</option>
-        <option
-          v-for="estado in estados"
-          :key="estado"
-          :value="estado"
-        >
-          {{ estado }}
-        </option>
-      </select>
+        <!-- Ordenação -->
+        <div class="filtro-group">
+          <label for="ordenacao-catalogo">Ordenar</label>
+          <select
+            id="ordenacao-catalogo"
+            v-model="ordenacao"
+            class="filtro-select"
+          >
+            <option value="az">A → Z</option>
+            <option value="za">Z → A</option>
+          </select>
+        </div>
 
-      <select v-model="ordenacao">
-        <option value="az">A → Z</option>
-        <option value="za">Z → A</option>
-      </select>
-
-      <button @click="limparFiltros">
-        Limpar
-      </button>
-
+        <!-- Botão Limpar -->
+        <div class="filtro-group btn-group">
+          <button @click="limparFiltros" class="btn-limpar">
+            Limpar
+          </button>
+        </div>
+      </div>
     </div>
 
     <div class="cards-grid">
-
       <router-link
         v-for="dino in dinosFiltrados"
         :key="dino.id"
-        :to="`/dinossauro/${dino.id}`"
+        :to="{ name: 'pagina', params: { id: dino.id } }"
         class="card-link"
       >
-
         <article class="card">
-
           <div v-if="dino.imagem" class="card-image">
             <img
               :src="dino.imagem"
               :alt="dino.nome"
-            >
+            />
           </div>
 
           <div class="card-body">
-
-            <h2> <em>{{ dino.nome }}  </em></h2>
+            <h2><em>{{ dino.nome }}</em></h2>
 
             <p class="tag">
               {{ dino.periodo }}
             </p>
 
             <p class="local">
-              📍 {{ dino.local }}
+               <font-awesome-icon icon="location-dot" />
+{{ dino.local }}
             </p>
 
             <p class="description">
@@ -202,145 +239,275 @@ function limparFiltros() {
               <li><strong>Peso:</strong> {{ dino.peso }}</li>
             </ul>
 
-            <p
-              v-if="dino.curiosidades"
-              class="curiosidades"
-            >
-              <strong>Curiosidade:</strong>
-              {{ dino.curiosidades }}
-            </p>
-
           </div>
-
         </article>
-
       </router-link>
-
     </div>
-
   </section>
 </template>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
-*{
-  font-family:'Lexend Deca',sans-serif;
+* {
+  font-family: 'Lexend Deca', sans-serif;
+  box-sizing: border-box;
 }
 
-.catalogo-page{
-  padding:20px;
+.catalogo-page {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.catalogo-header{
-  margin-bottom:20px;
-}
-
-.catalogo-header h1{
-  margin:0;
+.catalogo-header h1 {
+  margin: 0;
+  font-size: 2rem;
   color: #336808;
 }
 
-.catalogo-header p{
-  color:#64748b;
+.catalogo-header p {
+  margin: 4px 0 0 0;
+  color: #475569;
+  font-size: 1rem;
 }
 
-.filtros{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-bottom:30px;
+.filtros-container {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-.filtros input,
-.filtros select{
-  padding:12px;
-  border:1px solid #3b75b8;
-  border-radius:12px;
+.filtros-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr auto;
+  gap: 14px;
+  align-items: end;
 }
 
-.filtros button{
-  border:none;
-  padding:12px 18px;
-  border-radius:12px;
-  cursor:pointer;
-  background:#006e00;
-  color:white;
+.filtro-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
 }
 
-.cards-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:24px;
+.filtro-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #696047;
+  letter-spacing: 0.3px;
 }
 
-.card{
-  background:white;
-  border-radius:20px;
-  overflow:hidden;
-  border:1px solid #e2e8f0;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
-  transition:.3s;
+.filtro-input,
+.filtro-select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  background: #fff;
+  color: #554c33;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+  font-family: 'Lexend Deca', sans-serif;
+  height: 42px;
 }
 
-.card:hover{
-  transform:translateY(-5px);
+.filtro-input::placeholder {
+  color: #94a3b8;
 }
 
-.card-image{
-  background:#f8fafc;
+.filtro-input:hover,
+.filtro-select:hover {
+  border-color: #fca607;
 }
 
-.card-image img{
-  display:block;
-  width:100%;
-  height:240px;
-  object-fit:cover;
-  object-position:center;
+.filtro-input:focus,
+.filtro-select:focus {
+  outline: none;
+  border-color: #cf8804;
+  box-shadow: 0 0 0 4px rgba(104, 78, 8, 0.12);
 }
 
-.card-body{
-  padding:20px;
+.btn-group {
+  display: flex;
+  align-items: end;
 }
 
-.card-body h2{
-  margin-top:0;
+.btn-limpar {
+  border: none;
+  padding: 10px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #22c55e;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-family: 'Lexend Deca', sans-serif;
+  height: 42px;
+  white-space: nowrap;
+  width: 100%;
 }
 
-.tag{
-  color:#2563eb;
-  font-weight:600;
+.btn-limpar:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
 }
 
-.local{
-  color:#475569;
+.btn-limpar:active {
+  transform: scale(0.98);
 }
 
-.description{
-  color:#334155;
-  line-height:1.6;
+/* ===== CARDS ===== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
 }
 
-.metadata{
-  list-style:none;
-  padding:0;
-  margin-top:15px;
+.card-link {
+  text-decoration: none;
+  color: inherit;
 }
 
-.metadata li{
-  margin-bottom:6px;
+.card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.curiosidades{
-  margin-top:15px;
-  padding:12px;
-  border-radius:12px;
-  background:#f8fafc;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
 }
 
-.card-link{
-  text-decoration:none;
-  color:inherit;
+.card-image {
+  background: #f8fafc;
+  flex-shrink: 0;
+}
+
+.card-image img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+  color: #1e293b;
+}
+
+.tag {
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 4px 0;
+}
+
+.local {
+  color: #475569;
+  font-size: 0.9rem;
+  margin: 4px 0;
+}
+
+.description {
+  color: #334155;
+  line-height: 1.6;
+  margin: 8px 0;
+  flex: 1;
+}
+
+.metadata {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 0;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+}
+
+.metadata li {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.metadata li strong {
+  color: #334155;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1200px) {
+  .filtros-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+
+  .filtro-group:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .btn-group {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .filtros-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .filtro-group:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .btn-group {
+    grid-column: 1 / -1;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .catalogo-page {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filtros-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .filtro-group:first-child {
+    grid-column: 1;
+  }
+
+  .btn-group {
+    grid-column: 1;
+  }
 }
 </style>
-

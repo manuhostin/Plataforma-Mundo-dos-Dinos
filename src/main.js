@@ -27,6 +27,16 @@ import {
   faBook,
   faEnvelope,
   faPaperPlane,
+
+  // ===== NOVOS ÍCONES =====
+  faArrowLeft,
+  faLocationDot,
+  faDrumstickBite,
+  faDna,
+  faRuler,
+  faWeightScale,
+  faDragon
+
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -48,12 +58,25 @@ library.add(
   faBook,
   faEnvelope,
   faPaperPlane,
+
+  // ===== NOVOS ÍCONES =====
+  faArrowLeft,
+  faLocationDot,
+  faDrumstickBite,
+  faDna,
+  faRuler,
+  faWeightScale,
+  faDragon
 )
 
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
-app.component('font-awesome-icon', FontAwesomeIcon)
+
+app.component(
+  'font-awesome-icon',
+  FontAwesomeIcon
+)
 
 app.mount('#app')
