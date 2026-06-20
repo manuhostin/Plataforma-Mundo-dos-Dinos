@@ -49,6 +49,7 @@ const dinossauros = [
   id: 4,
   nome: 'Angaturama limai',
   periodo: 'Cretáceo Inferior (Aptiano), ~115 MA.',
+  dieta: 'Piscívoro / Carnívoro',
   local: 'Formação Romualdo, Grupo Santana, Santana do Cariri, Ceará',
   familia: 'Spinosauridae (Spinosaurinae)',
   tamanho: 'Cerca de 7 m de comprimento',
