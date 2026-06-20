@@ -8,7 +8,6 @@ const mapContainer = ref(null)
 let map = null
 let markers = []
 
-// Estados dos filtros
 const filtros = ref({
   periodo: '',
   dieta: '',
@@ -16,7 +15,6 @@ const filtros = ref({
   busca: ''
 })
 
-// Extrair opções únicas para os filtros
 const opcoesPeriodo = computed(() => {
   const periodos = new Set()
   dinossauros.forEach(d => {
@@ -83,7 +81,6 @@ const dadosFiltrados = computed(() => {
   })
 })
 
-// Mapeamento de emojis por tipo
 const emojiMap = {
   'teropode': '🦖',
   'sauropode': '🦕',
@@ -122,11 +119,11 @@ function atualizarMarcadores() {
     }).addTo(map)
 
     const popupContent = `
-      <strong>${item.nome}</strong><br />
+      <strong><em>${item.nome}</em></strong><br />
       ${item.local}<br />
       <em>${item.periodo}</em><br />
       <span style="font-size: 0.9rem; color: #475569;">
-        🍖 ${item.dieta} | 📏 ${item.tamanho || 'N/A'}
+        Dieta: ${item.dieta} | Tamanho: ${item.tamanho || 'N/A'}
       </span>
       ${item.descricao ? `<br /><br /><span style="font-size: 0.85rem;">${item.descricao}</span>` : ''}
     `
@@ -176,7 +173,7 @@ function limparFiltros() {
         <h1>Mapa dos Dinossauros Brasileiros</h1>
         <p>
           Visualize em um mapa interativo os pontos de descoberta dos fósseis dos
-          dinossauros do Brasil.
+          dinossauros do Brasil. Para mais informações, visite o <stronger>catálogo!</stronger>
         </p>
       </div>
 
@@ -335,13 +332,13 @@ function limparFiltros() {
 
 .filtro-input:hover,
 .filtro-select:hover {
-  border-color: #336808;
+  border-color: #fca607;
 }
 
 .filtro-input:focus,
 .filtro-select:focus {
   outline: none;
-  border-color: #336808;
+  border-color: #fca607;
   box-shadow: 0 0 0 4px rgba(51, 104, 8, 0.12);
 }
 
@@ -384,7 +381,7 @@ function limparFiltros() {
 }
 
 .resultados-info span {
-  color: #336808;
+  color: #084a68;
   font-weight: 700;
 }
 
