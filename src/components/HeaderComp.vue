@@ -9,6 +9,8 @@
         <router-link to="/" class="nav-link">Início</router-link>
         <router-link to="/mapa" class="nav-link">Mapa</router-link>
         <router-link to="/catalogo" class="nav-link">Catálogo</router-link>
+        <router-link to="/quiz" class="nav-link">Quiz</router-link>
+        <router-link to="/sobre" class="nav-link">Sobre</router-link>
       </nav>
     </div>
   </header>
