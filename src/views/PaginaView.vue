@@ -26,24 +26,30 @@ watch(dino, (novo) => {
   if (novo?.imagem) {
     imagemSelecionada.value = novo.imagem
   }
-}, { immediate:true })
+}, { immediate: true })
+
 </script>
 
 <template>
-  <button class="botao-voltar" @click="router.back()">
-  ← Voltar
+
+<button
+class="botao-voltar"
+@click="router.back()"
+>
+<font-awesome-icon icon="arrow-left" />
+Voltar
 </button>
 
 <section
-  v-if="dino"
-  class="pagina"
+v-if="dino"
+class="pagina"
 >
 
 <div class="banner">
 
 <img
-  :src="imagemSelecionada"
-  :alt="dino.nome"
+:src="imagemSelecionada"
+:alt="dino.nome"
 >
 
 <div class="overlay">
@@ -57,28 +63,28 @@ watch(dino, (novo) => {
 </p>
 
 <p class="local">
-📍 {{ dino.local }}
+<font-awesome-icon icon="location-dot" />
+{{ dino.local }}
 </p>
 
 </div>
 
 </div>
 
-
 <div class="conteudo">
-
-
 
 <p class="descricao">
 {{ dino.descricao }}
 </p>
 
-
 <div class="info-cards">
 
 <div class="info-card">
 
-<span>🥩 Dieta</span>
+<span>
+<font-awesome-icon icon="drumstick-bite" />
+Dieta
+</span>
 
 <strong>
 {{ dino.dieta }}
@@ -89,7 +95,10 @@ watch(dino, (novo) => {
 
 <div class="info-card">
 
-<span>🧬 Família</span>
+<span>
+<font-awesome-icon icon="dna" />
+Família
+</span>
 
 <strong>
 {{ dino.familia }}
@@ -100,7 +109,10 @@ watch(dino, (novo) => {
 
 <div class="info-card">
 
-<span>📏 Tamanho</span>
+<span>
+<font-awesome-icon icon="ruler" />
+Tamanho
+</span>
 
 <strong>
 {{ dino.tamanho }}
@@ -111,7 +123,10 @@ watch(dino, (novo) => {
 
 <div class="info-card">
 
-<span>⚖️ Peso</span>
+<span>
+<font-awesome-icon icon="weight-scale" />
+Peso
+</span>
 
 <strong>
 {{ dino.peso }}
@@ -128,7 +143,11 @@ class="curiosidade"
 >
 
 <h3>
-🦖 Curiosidade
+
+ <font-awesome-icon icon="lightbulb" class="fa-icon" />
+
+Curiosidade
+
 </h3>
 
 <p>
@@ -140,9 +159,7 @@ class="curiosidade"
 
 <div class="galeria">
 
-<h2>
-Galeria
-</h2>
+<h2>Galeria</h2>
 
 <div class="miniaturas">
 
@@ -221,21 +238,26 @@ font-size:3rem;
 }
 
 .botao-voltar{
-  border:none;
-  background:#ffffffcc;
-  color:#1e293b;
-  padding:12px 20px;
-  border-radius:999px;
-  cursor:pointer;
-  font-weight:700;
-  box-shadow:0 10px 30px rgba(15,23,42,.12);
-  transition:transform .2s, background .2s;
-  margin-bottom:30px;
+border:none;
+background:#ffffffcc;
+color:#1e293b;
+padding:12px 20px;
+border-radius:999px;
+cursor:pointer;
+font-weight:700;
+box-shadow:0 10px 30px rgba(15,23,42,.12);
+
+display:flex;
+align-items:center;
+gap:10px;
+
+transition:.2s;
+margin-bottom:30px;
 }
 
 .botao-voltar:hover{
-  transform:translateY(-1px);
-  background:#f8fafc;
+transform:translateY(-2px);
+background:#f8fafc;
 }
 
 .periodo{
@@ -245,6 +267,9 @@ margin-top:10px;
 }
 
 .local{
+display:flex;
+align-items:center;
+gap:8px;
 opacity:.9;
 }
 
@@ -278,6 +303,10 @@ gap:10px;
 }
 
 .info-card span{
+display:flex;
+align-items:center;
+gap:8px;
+
 font-size:.9rem;
 color:#64748b;
 }
@@ -288,20 +317,28 @@ color:#336808;
 }
 
 .curiosidade{
-background:#f1f5f9;
+background:#f9f8f1;
 padding:25px;
 border-radius:20px;
 margin-bottom:50px;
 }
 
 .curiosidade h3{
+display:flex;
+align-items:center;
+gap:10px;
+
 margin-top:0;
-color:#336808;
+color:#e0ad04;
+}
+
+.fa-solid{
+color:#e2a600;
 }
 
 .galeria h2{
 margin-bottom:25px;
-color:#336808;
+color:#0c74d6;
 }
 
 .miniaturas{
