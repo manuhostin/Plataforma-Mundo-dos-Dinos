@@ -1,10 +1,13 @@
 <script setup>
-import { ref, watch, onMounted } from 'vue'
+import { ref, provide, watch, onMounted } from 'vue'
 import FooterComp from './components/FooterComp.vue'
 import HeaderComp from './components/HeaderComp.vue'
 
 const isDark = ref(false)
 const isEnglish = ref(false)
+
+provide('isEnglish', isEnglish)
+provide('isDark', isDark)
 
 function toggleTheme() {
   isDark.value = !isDark.value

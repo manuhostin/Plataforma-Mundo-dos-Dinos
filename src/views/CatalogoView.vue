@@ -1,6 +1,8 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, inject } from 'vue'
 import dinossauros from '../data/dinossauros'
+
+const isEnglish = inject('isEnglish', ref(false))
 
 const busca = ref('')
 const periodoSelecionado = ref('')
@@ -92,6 +94,29 @@ const dinosFiltrados = computed(() => {
   return lista
 })
 
+const text = computed(() => ({
+  headerTitle: isEnglish.value
+    ? 'Brazilian Dinosaur Catalog'
+    : 'Catálogo de Dinossauros Brasileiros',
+  resultsFound: isEnglish.value
+    ? `${dinosFiltrados.value.length} species found`
+    : `${dinosFiltrados.value.length} espécies encontradas`,
+  searchLabel: isEnglish.value ? 'Search' : 'Buscar',
+  searchPlaceholder: isEnglish.value ? 'Search dinosaur...' : 'Pesquisar dinossauro...',
+  periodoLabel: isEnglish.value ? 'Period' : 'Período',
+  dietaLabel: isEnglish.value ? 'Diet' : 'Dieta',
+  estadoLabel: isEnglish.value ? 'State' : 'Estado',
+  ordenarLabel: isEnglish.value ? 'Sort' : 'Ordenar',
+  allOption: isEnglish.value ? 'All' : 'Todos',
+  sortAz: isEnglish.value ? 'A → Z' : 'A → Z',
+  sortZa: isEnglish.value ? 'Z → A' : 'Z → A',
+  clearButton: isEnglish.value ? 'Clear' : 'Limpar',
+  dietLabel: isEnglish.value ? 'Diet:' : 'Dieta:',
+  familyLabel: isEnglish.value ? 'Family:' : 'Família:',
+  sizeLabel: isEnglish.value ? 'Size:' : 'Tamanho:',
+  weightLabel: isEnglish.value ? 'Weight:' : 'Peso:',
+}))
+
 function limparFiltros() {
   busca.value = ''
   periodoSelecionado.value = ''
@@ -104,33 +129,33 @@ function limparFiltros() {
 <template>
   <section class="catalogo-page">
     <header class="catalogo-header">
-      <h1>Catálogo de Dinossauros Brasileiros</h1>
-      <p>{{ dinosFiltrados.length }} espécies encontradas</p>
+      <h1>{{ text.headerTitle }}</h1>
+      <p>{{ text.resultsFound }}</p>
     </header>
 
     <div class="filtros-container">
       <div class="filtros-grid">
         <!-- Busca -->
         <div class="filtro-group">
-          <label for="busca-catalogo">Buscar</label>
+          <label for="busca-catalogo">{{ text.searchLabel }}</label>
           <input
             id="busca-catalogo"
             v-model="busca"
             type="text"
-            placeholder="Pesquisar dinossauro..."
+            :placeholder="text.searchPlaceholder"
             class="filtro-input"
           />
         </div>
 
         <!-- Período -->
         <div class="filtro-group">
-          <label for="periodo-catalogo">Período</label>
+          <label for="periodo-catalogo">{{ text.periodoLabel }}</label>
           <select
             id="periodo-catalogo"
             v-model="periodoSelecionado"
             class="filtro-select"
           >
-            <option value="">Todos</option>
+            <option value="">{{ text.allOption }}</option>
             <option
               v-for="periodo in periodos"
               :key="periodo"
@@ -143,13 +168,13 @@ function limparFiltros() {
 
         <!-- Dieta -->
         <div class="filtro-group">
-          <label for="dieta-catalogo">Dieta</label>
+          <label for="dieta-catalogo">{{ text.dietaLabel }}</label>
           <select
             id="dieta-catalogo"
             v-model="dietaSelecionada"
             class="filtro-select"
           >
-            <option value="">Todos</option>
+            <option value="">{{ text.allOption }}</option>
             <option
               v-for="dieta in dietas"
               :key="dieta"
@@ -162,13 +187,13 @@ function limparFiltros() {
 
         <!-- Estado -->
         <div class="filtro-group">
-          <label for="estado-catalogo">Estado</label>
+          <label for="estado-catalogo">{{ text.estadoLabel }}</label>
           <select
             id="estado-catalogo"
             v-model="estadoSelecionado"
             class="filtro-select"
           >
-            <option value="">Todos</option>
+            <option value="">{{ text.allOption }}</option>
             <option
               v-for="estado in estados"
               :key="estado"
@@ -181,21 +206,21 @@ function limparFiltros() {
 
         <!-- Ordenação -->
         <div class="filtro-group">
-          <label for="ordenacao-catalogo">Ordenar</label>
+          <label for="ordenacao-catalogo">{{ text.ordenarLabel }}</label>
           <select
             id="ordenacao-catalogo"
             v-model="ordenacao"
             class="filtro-select"
           >
-            <option value="az">A → Z</option>
-            <option value="za">Z → A</option>
+            <option value="az">{{ text.sortAz }}</option>
+            <option value="za">{{ text.sortZa }}</option>
           </select>
         </div>
 
         <!-- Botão Limpar -->
         <div class="filtro-group btn-group">
           <button @click="limparFiltros" class="btn-limpar">
-            Limpar
+            {{ text.clearButton }}
           </button>
         </div>
       </div>
@@ -233,10 +258,10 @@ function limparFiltros() {
             </p>
 
             <ul class="metadata">
-              <li><strong>Dieta:</strong> {{ dino.dieta }}</li>
-              <li><strong>Família:</strong> {{ dino.familia }}</li>
-              <li><strong>Tamanho:</strong> {{ dino.tamanho }}</li>
-              <li><strong>Peso:</strong> {{ dino.peso }}</li>
+              <li><strong>{{ text.dietLabel }}</strong> {{ dino.dieta }}</li>
+              <li><strong>{{ text.familyLabel }}</strong> {{ dino.familia }}</li>
+              <li><strong>{{ text.sizeLabel }}</strong> {{ dino.tamanho }}</li>
+              <li><strong>{{ text.weightLabel }}</strong> {{ dino.peso }}</li>
             </ul>
 
           </div>
