@@ -204,6 +204,7 @@ box-sizing:border-box;
 max-width:1400px;
 margin:auto;
 padding-bottom:50px;
+color: var(--page-text);
 }
 
 .banner{
@@ -239,8 +240,8 @@ font-size:3rem;
 
 .botao-voltar{
 border:none;
-background:#ffffffcc;
-color:#1e293b;
+background:var(--surface);
+color:var(--page-text);
 padding:12px 20px;
 border-radius:999px;
 cursor:pointer;
@@ -257,7 +258,7 @@ margin-bottom:30px;
 
 .botao-voltar:hover{
 transform:translateY(-2px);
-background:#f8fafc;
+background:var(--surface-muted);
 }
 
 .periodo{
@@ -280,7 +281,8 @@ padding:40px;
 .descricao{
 font-size:1rem;
 line-height:1.9;
-color:#334155;
+color: var(--page-text);
+opacity: 0.85;
 margin-bottom:35px;
 }
 
@@ -292,7 +294,7 @@ margin-bottom:35px;
 }
 
 .info-card{
-background:white;
+background:var(--surface);
 padding:25px;
 border-radius:20px;
 box-shadow:0 8px 25px rgba(0,0,0,.07);
@@ -308,16 +310,17 @@ align-items:center;
 gap:8px;
 
 font-size:.9rem;
-color:#64748b;
+color: var(--page-text);
+opacity: 0.75;
 }
 
 .info-card strong{
 font-size:1.1rem;
-color:#336808;
+color:var(--accent-strong);
 }
 
 .curiosidade{
-background:#f9f8f1;
+background:var(--surface-muted);
 padding:25px;
 border-radius:20px;
 margin-bottom:50px;
@@ -329,16 +332,16 @@ align-items:center;
 gap:10px;
 
 margin-top:0;
-color:#e0ad04;
+color:var(--accent);
 }
 
 .fa-solid{
-color:#e2a600;
+color:var(--accent);
 }
 
 .galeria h2{
 margin-bottom:25px;
-color:#0c74d6;
+color:var(--accent-strong);
 }
 
 .miniaturas{
@@ -362,12 +365,13 @@ transform:translateY(-6px);
 }
 
 .thumb.ativo{
-border-color:#336808;
+border-color:var(--accent-strong);
 }
 
 .erro{
 padding:100px;
 text-align:center;
+color: var(--page-text);
 }
 
 @media(max-width:900px){

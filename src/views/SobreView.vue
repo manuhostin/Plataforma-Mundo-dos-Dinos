@@ -211,28 +211,30 @@ async function handleSubmit(e) {
   flex-direction: column;
   gap: 40px;
   min-height: 100vh;
+  color: var(--page-text);
 }
 
 .about-header,
 .sources,
 .contact-section {
-  background: white;
+  background: var(--surface);
   padding: 40px;
   border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px var(--shadow, rgba(0, 0, 0, 0.06));
 }
 
 .about-text h1 {
   font-size: 3rem;
   line-height: 1.2;
-  color: #1e293b;
+  color: var(--page-text);
   margin-bottom: 20px;
 }
 
 .about-text p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #475569;
+  color: var(--page-text);
+  opacity: 0.8;
   max-width: 700px;
 }
 
@@ -280,12 +282,12 @@ async function handleSubmit(e) {
 }
 
 .about-card {
-  background: white;
+  background: var(--surface);
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px var(--shadow, rgba(0, 0, 0, 0.05));
   transition: transform 0.3s ease;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
 }
 
 .about-card:hover {
@@ -295,33 +297,35 @@ async function handleSubmit(e) {
 .card-icon {
   font-size: 2rem;
   margin-bottom: 15px;
-  color: #2d6cdf;
+  color: var(--accent);
 }
 
 .about-card h3 {
-  color: #1e293b;
+  color: var(--page-text);
   margin-bottom: 12px;
 }
 
 .about-card p {
-  color: #64748b;
+  color: var(--page-text);
+  opacity: 0.8;
   line-height: 1.8;
   font-size: 0.95rem;
 }
 
 .sources h2 {
-  color: #1e293b;
+  color: var(--page-text);
   font-size: 2rem;
   margin-bottom: 8px;
 }
 
 .sources h2 .fa-icon {
-  color: #134703;
+  color: var(--accent-strong);
   margin-right: 12px;
 }
 
 .sources > p {
-  color: #475569;
+  color: var(--page-text);
+  opacity: 0.8;
   line-height: 1.8;
   margin-bottom: 16px;
 }
@@ -334,32 +338,34 @@ async function handleSubmit(e) {
 }
 
 .source-item {
-  background: #f8fafc;
+  background: var(--surface-muted);
   padding: 15px;
   border-radius: 12px;
-  border-left: 4px solid #066803;
-  color: #475569;
+  border-left: 4px solid var(--accent-strong);
+  color: var(--page-text);
+  opacity: 0.8;
   font-size: 0.95rem;
   line-height: 1.6;
 }
 
 .source-item b {
-  color: #1e293b;
+  color: var(--page-text);
 }
 
 .contact-section h2 {
-  color: #1e293b;
+  color: var(--page-text);
   font-size: 2rem;
   margin-bottom: 8px;
 }
 
 .contact-section h2 .fa-icon {
-  color: #ffd102;
+  color: var(--accent);
   margin-right: 12px;
 }
 
 .contact-section > p {
-  color: #475569;
+  color: var(--page-text);
+  opacity: 0.8;
   line-height: 1.8;
 }
 
@@ -373,17 +379,25 @@ async function handleSubmit(e) {
 .contact-form input,
 .contact-form textarea {
   padding: 15px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border);
   border-radius: 12px;
   font-size: 1rem;
   outline: none;
   font-family: 'Lexend Deca', sans-serif;
   transition: border-color 0.3s ease;
+  background: var(--surface-muted);
+  color: var(--page-text);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--page-text);
+  opacity: 0.6;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #dfa72d;
+  border-color: var(--accent);
   box-shadow: 0 0 0 4px rgba(45, 108, 223, 0.1);
 }
 
@@ -391,7 +405,7 @@ async function handleSubmit(e) {
   padding: 15px 30px;
   border: none;
   border-radius: 999px;
-  background: #fca400;
+  background: var(--accent);
   color: white;
   font-weight: 600;
   cursor: pointer;
@@ -405,7 +419,7 @@ async function handleSubmit(e) {
 }
 
 .contact-form button:hover {
-  background: #c48002;
+  background: var(--accent-strong);
   transform: translateY(-2px);
 }
 

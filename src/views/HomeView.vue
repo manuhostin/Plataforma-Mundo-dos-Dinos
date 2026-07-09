@@ -274,9 +274,8 @@
 .home-container{
   min-height:100vh;
   padding:40px;
+  color: var(--page-text);
 }
-
-/* HERO */
 
 .hero{
   display:flex;
@@ -294,10 +293,10 @@
   gap:24px;
   width:100%;
   max-width:1200px;
-  background: rgba(255,255,255,1);
+  background: var(--surface);
   padding:28px;
   border-radius:22px;
-  box-shadow: 0 30px 80px rgba(15,23,42,0.08);
+  box-shadow: 0 30px 80px var(--shadow, rgba(15,23,42,0.08));
 }
 
 .content-text{
@@ -317,7 +316,7 @@
 .hero h1{
   font-size:3.5rem;
   line-height:1.1;
-  color:#1e293b;
+  color: var(--page-text);
   margin-bottom:25px;
 }
 
@@ -332,14 +331,6 @@
   font-weight:600;
 }
 
-
-.hero h1{
-  font-size:3.5rem;
-  line-height:1.1;
-  color:#1e293b;
-  margin-bottom:25px;
-}
-
 .hero h1 span{
   color:#1d9122;
 }
@@ -347,7 +338,8 @@
 .hero p{
   font-size:1.1rem;
   line-height:1.8;
-  color:#475569;
+  color: var(--page-text);
+  opacity: 0.85;
   max-width:700px;
 }
 
@@ -391,33 +383,23 @@
   color:white;
 }
 
-/* CARDS */
-
 .features{
   display:grid;
-  grid-template-columns:
-  repeat(auto-fit,minmax(250px,1fr));
-
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
   gap:25px;
-
   margin-bottom:70px;
 }
 
 .feature-card{
-
-  background:white;
+  background: var(--surface);
   padding:30px;
   border-radius:20px;
-
-  box-shadow:
-  0 15px 35px rgba(0,0,0,.08);
-
+  box-shadow: 0 15px 35px var(--shadow, rgba(0,0,0,.08));
   transition:.3s;
 }
 
 .feature-card:hover{
-  transform:
-  translateY(-10px);
+  transform: translateY(-10px);
 }
 
 .icon{
@@ -428,33 +410,33 @@
 
 .feature-card h3{
   margin-bottom:10px;
-  color:#1e293b;
+  color: var(--page-text);
 }
 
 .feature-card p{
-  color:#64748b;
+  color: var(--page-text);
+  opacity: 0.75;
   line-height:1.7;
 }
 
-/* INFO SECTION */
-
 .info-section{
-  background:white;
+  background: var(--surface);
   padding:40px;
   border-radius:25px;
   margin-bottom:40px;
-  box-shadow:0 10px 30px rgba(0,0,0,.06);
+  box-shadow:0 10px 30px var(--shadow, rgba(0,0,0,.06));
 }
 
 .info-section h2{
   margin-bottom:20px;
-  color:#1e3b25;
+  color: var(--page-text);
   font-size:2rem;
 }
 
 .info-section > p{
   line-height:1.8;
-  color:#475569;
+  color: var(--page-text);
+  opacity: 0.8;
   margin-bottom:16px;
 }
 
@@ -470,7 +452,7 @@
 }
 
 .info-card{
-  background:#f8fafc;
+  background: var(--surface-muted);
   padding:24px;
   border-radius:16px;
   border-left:4px solid #2ddf71;
@@ -497,42 +479,41 @@
   font-size:2rem;
   display:block;
   margin-bottom:12px;
-  color: #000000;
+  color: var(--accent);
 }
 
 .info-card h4{
-  color:#1e293b;
+  color: var(--page-text);
   margin-bottom:10px;
 }
 
 .info-card p{
-  color:#64748b;
+  color: var(--page-text);
+  opacity: 0.75;
   line-height:1.7;
   font-size:.95rem;
 }
 
 .info-card p strong{
-  color:#1e293b;
+  color: var(--page-text);
 }
 
 .info-card p em{
   font-style:italic;
-  color:#dfa72d;
+  color: var(--accent);
 }
 
-/* PRESERVATION */
-
 .preservation{
-  background:white;
+  background: var(--surface);
   padding:40px;
   border-radius:25px;
   margin-bottom:40px;
-  box-shadow:0 10px 30px rgba(0,0,0,.06);
+  box-shadow:0 10px 30px var(--shadow, rgba(0,0,0,.06));
 }
 
 .preservation h2{
   margin-bottom:20px;
-  color:#1e293b;
+  color: var(--page-text);
   font-size:2rem;
 }
 
@@ -543,7 +524,8 @@
 
 .preservation > p{
   line-height:1.8;
-  color:#475569;
+  color: var(--page-text);
+  opacity: 0.8;
   margin-bottom:30px;
 }
 
@@ -554,14 +536,14 @@
 }
 
 .preservation-card{
-  background:#f8fafc;
+  background: var(--surface-muted);
   padding:28px;
   border-radius:16px;
   display:flex;
   gap:18px;
   align-items:flex-start;
   transition:transform .3s;
-  border:1px solid #e2e8f0;
+  border:1px solid var(--border);
 }
 
 .preservation-card:hover{
@@ -599,12 +581,13 @@
 }
 
 .preservation-text h4{
-  color:#1e293b;
+  color: var(--page-text);
   margin-bottom:12px;
 }
 
 .preservation-text p{
-  color:#64748b;
+  color: var(--page-text);
+  opacity: 0.75;
   line-height:1.8;
   font-size:.95rem;
   margin-bottom:12px;
@@ -615,7 +598,7 @@
 }
 
 .preservation-text p strong{
-  color:#1e293b;
+  color: var(--page-text);
 }
 
 .preservation-text ul{
@@ -625,7 +608,8 @@
 }
 
 .preservation-text ul li{
-  color:#475569;
+  color: var(--page-text);
+  opacity: 0.8;
   line-height:1.8;
   font-size:.92rem;
   padding-left:20px;
@@ -638,8 +622,6 @@
   left:0;
   opacity:.7;
 }
-
-/* RESPONSIVO */
 
 @media(max-width:1024px){
   .dino-display{

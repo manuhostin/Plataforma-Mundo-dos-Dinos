@@ -258,6 +258,7 @@ function limparFiltros() {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  color: var(--page-text);
 }
 
 .mapa-header {
@@ -269,23 +270,23 @@ function limparFiltros() {
 .mapa-header h1 {
   margin: 0;
   font-size: 2rem;
-  color: #336808;
+  color: var(--accent-strong);
 }
 
 .mapa-header p {
   margin: 0;
-  color: #475569;
+  color: var(--page-text);
+  opacity: 0.8;
   max-width: 760px;
   line-height: 1.7;
 }
 
-/* ===== FILTROS ===== */
 .filtros-container {
-  background: white;
+  background: var(--surface);
   border-radius: 20px;
   padding: 24px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 25px var(--shadow, rgba(0, 0, 0, 0.08));
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -308,7 +309,7 @@ function limparFiltros() {
 .filtro-group label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #475569;
+  color: var(--page-text);
   letter-spacing: 0.3px;
 }
 
@@ -316,10 +317,10 @@ function limparFiltros() {
 .filtro-select {
   width: 100%;
   padding: 10px 14px;
-  border: 1.5px solid #d1d5db;
+  border: 1.5px solid var(--border);
   border-radius: 10px;
-  background: #fff;
-  color: #334155;
+  background: var(--surface-muted);
+  color: var(--page-text);
   font-size: 0.9rem;
   transition: all 0.25s ease;
   font-family: 'Lexend Deca', sans-serif;
@@ -327,18 +328,19 @@ function limparFiltros() {
 }
 
 .filtro-input::placeholder {
-  color: #94a3b8;
+  color: var(--page-text);
+  opacity: 0.6;
 }
 
 .filtro-input:hover,
 .filtro-select:hover {
-  border-color: #fca607;
+  border-color: var(--accent);
 }
 
 .filtro-input:focus,
 .filtro-select:focus {
   outline: none;
-  border-color: #fca607;
+  border-color: var(--accent);
   box-shadow: 0 0 0 4px rgba(51, 104, 8, 0.12);
 }
 
@@ -375,20 +377,21 @@ function limparFiltros() {
 
 .resultados-info {
   padding-top: 14px;
-  border-top: 1px solid #e2e8f0;
-  color: #64748b;
+  border-top: 1px solid var(--border);
+  color: var(--page-text);
+  opacity: 0.8;
   font-size: 0.95rem;
 }
 
 .resultados-info span {
-  color: #084a68;
+  color: var(--accent-strong);
   font-weight: 700;
 }
 
 .map-wrapper {
   width: 100%;
   min-height: 560px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   border-radius: 22px;
   overflow: hidden;
 }
@@ -397,6 +400,12 @@ function limparFiltros() {
   width: 100%;
   height: 100%;
   min-height: 560px;
+}
+
+:deep(.leaflet-popup-content-wrapper),
+:deep(.leaflet-popup-tip) {
+  background: var(--surface);
+  color: var(--page-text);
 }
 
 :deep(.dino-marker) {
@@ -424,7 +433,6 @@ function limparFiltros() {
   user-select: none;
 }
 
-/* Responsividade */
 @media (max-width: 1024px) {
   .filtros-grid {
     grid-template-columns: 1fr 1fr;
