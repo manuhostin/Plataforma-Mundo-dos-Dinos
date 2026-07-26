@@ -4,8 +4,8 @@
     <div class="quiz-card">
 
       <h1>
-      Quiz dos
-        <span>Dinossauros Brasileiros</span>
+        {{ text.title }}
+        <span>{{ text.subtitle }}</span>
       </h1>
 
       <div v-if="perguntaAtual">
@@ -19,14 +19,14 @@
         <div class="question-box">
 
           <h2>
-            Qual é a
-            <span>{{ perguntaAtual.tipo }}</span>
-            de
+            {{ text.questionPrefix }}
+            <span>{{ getTipoLabel(perguntaAtual.tipo) }}</span>
+            {{ text.questionSuffix }}
             {{ perguntaAtual.dino.nome }}?
           </h2>
 
           <p class="rodada">
-            Pergunta {{ rodada + 1 }}/10
+            {{ text.questionCounter.replace('{number}', rodada + 1) }}
           </p>
 
         </div>
@@ -45,7 +45,7 @@
 
         <div class="score">
 
-          ⭐ {{ pontos }} pontos
+          ⭐ {{ pontos }} {{ text.pointsLabel }}
 
         </div>
 
@@ -54,13 +54,13 @@
       <div v-else class="resultado">
 
         <h2>
-          🎉 Quiz Finalizado
+          🎉 {{ text.finishedTitle }}
         </h2>
 
         <div class="resultado-box">
 
           <h3>
-            Sua pontuação
+            {{ text.scoreLabel }}
           </h3>
 
           <span>
@@ -73,7 +73,7 @@
           class="reiniciar-btn"
           @click="reiniciar"
         >
-          Jogar Novamente
+          {{ text.restartButton }}
         </button>
 
       </div>
@@ -84,9 +84,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, inject, computed } from 'vue'
 import dinossauros from '@/data/dinossauros'
+import { translateDinoField } from '../utils/translateDinoData'
 
+const isEnglish = inject('isEnglish', ref(false))
 const pontos = ref(0)
 const rodada = ref(0)
 
@@ -99,6 +101,40 @@ const tiposPergunta=[
 'familia'
 ]
 
+const dinossaurosTraduzidos = computed(() =>
+  dinossauros.map(dino => ({
+    ...dino,
+    nome: translateDinoField(dino, 'nome', isEnglish.value),
+    periodo: translateDinoField(dino, 'periodo', isEnglish.value),
+    dieta: translateDinoField(dino, 'dieta', isEnglish.value),
+    familia: translateDinoField(dino, 'familia', isEnglish.value),
+  }))
+)
+
+const text = computed(() => ({
+  title: isEnglish.value ? 'Brazilian Dinosaurs' : 'Quiz dos',
+  subtitle: isEnglish.value ? 'Quiz' : 'Dinossauros Brasileiros',
+  questionPrefix: isEnglish.value ? 'What is the' : 'Qual é a',
+  questionSuffix: isEnglish.value ? 'of' : 'de',
+  questionCounter: isEnglish.value ? 'Question {number}/10' : 'Pergunta {number}/10',
+  pointsLabel: isEnglish.value ? 'points' : 'pontos',
+  finishedTitle: isEnglish.value ? 'Quiz Finished' : 'Quiz Finalizado',
+  scoreLabel: isEnglish.value ? 'Your score' : 'Sua pontuação',
+  restartButton: isEnglish.value ? 'Play Again' : 'Jogar Novamente',
+}))
+
+function getTipoLabel(tipo) {
+  if (!tipo) return ''
+
+  const labels = {
+    dieta: isEnglish.value ? 'diet' : 'dieta',
+    periodo: isEnglish.value ? 'period' : 'período',
+    familia: isEnglish.value ? 'family' : 'família',
+  }
+
+  return labels[tipo] || tipo
+}
+
 function embaralhar(array){
  return [...array].sort(()=>Math.random()-0.5)
 }
@@ -106,9 +142,9 @@ function embaralhar(array){
 function gerarPergunta(){
 
  const dino=
- dinossauros[
+ dinossaurosTraduzidos.value[
  Math.floor(
- Math.random()*dinossauros.length
+ Math.random()*dinossaurosTraduzidos.value.length
  )
  ]
 
@@ -122,7 +158,7 @@ function gerarPergunta(){
  const respostaCorreta=dino[tipo]
 
  let respostasErradas=
- dinossauros
+ dinossaurosTraduzidos.value
  .map(d=>d[tipo])
  .filter(
  v=>v!==respostaCorreta
@@ -159,16 +195,16 @@ function responder(opcao){
  perguntaAtual.value.resposta
  ){
  pontos.value++
- alert('✅ Acertou!')
+ alert(isEnglish.value ? '✅ Correct!' : '✅ Acertou!')
  }
 
  else{
 
  alert(
-`❌ Errou!
-Resposta correta:
-${perguntaAtual.value.resposta}`
-)
+ isEnglish.value
+   ? `❌ Wrong!\nCorrect answer:\n${perguntaAtual.value.resposta}`
+   : `❌ Errou!\nResposta correta:\n${perguntaAtual.value.resposta}`
+ )
 
  }
 

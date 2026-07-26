@@ -1,11 +1,27 @@
+<script setup>
+import { ref, inject, computed } from 'vue'
+
+const isEnglish = inject('isEnglish', ref(false))
+
+const text = computed(() => ({
+  title: isEnglish.value
+    ? 'The Fantastic World of Dinosaurs'
+    : 'O Fantástico Mundo dos Dinossauros',
+  subtitle: isEnglish.value
+    ? 'Research on Brazilian paleofauna'
+    : 'Pesquisa sobre a paleofauna brasileira',
+  credit: isEnglish.value ? 'Developed by: Manu Hostin' : 'Desenvolvido por: Manu Hostin',
+}))
+</script>
+
 <template>
   <footer class="footer">
     <div class="footer-content">
       <div class="left-info">
-        <p><strong>O Fantástico Mundo dos Dinossauros</strong></p>
-        <p>Pesquisa sobre a paleofauna brasileira</p>
+        <p><strong>{{ text.title }}</strong></p>
+        <p>{{ text.subtitle }}</p>
       </div>
-      <div class="right-info">Desenvolvido por: Manu Hostin</div>
+      <div class="right-info">{{ text.credit }}</div>
     </div>
   </footer>
 </template>

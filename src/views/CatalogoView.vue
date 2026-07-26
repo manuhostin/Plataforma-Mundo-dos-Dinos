@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, inject } from 'vue'
 import dinossauros from '../data/dinossauros'
+import { translateDinoField } from '../utils/translateDinoData'
 
 const isEnglish = inject('isEnglish', ref(false))
 
@@ -28,20 +29,34 @@ const getEstado = local => {
   return partes[partes.length - 1].trim()
 }
 
+const translatedDinos = computed(() =>
+  dinossauros.map(dino => ({
+    ...dino,
+    nome: translateDinoField(dino, 'nome', isEnglish.value),
+    periodo: translateDinoField(dino, 'periodo', isEnglish.value),
+    dieta: translateDinoField(dino, 'dieta', isEnglish.value),
+    local: translateDinoField(dino, 'local', isEnglish.value),
+    familia: translateDinoField(dino, 'familia', isEnglish.value),
+    tamanho: translateDinoField(dino, 'tamanho', isEnglish.value),
+    peso: translateDinoField(dino, 'peso', isEnglish.value),
+    descricao: translateDinoField(dino, 'descricao', isEnglish.value),
+  }))
+)
+
 const periodos = [...new Set(
-  dinossauros
+  translatedDinos.value
     .map(d => getPrimaryPeriodo(d.periodo))
     .filter(Boolean)
 )].sort()
 
 const dietas = [...new Set(
-  dinossauros
+  translatedDinos.value
     .map(d => getPrimaryDieta(d.dieta))
     .filter(Boolean)
 )].sort()
 
 const estados = [...new Set(
-  dinossauros
+  translatedDinos.value
     .map(d => getEstado(d.local))
     .filter(Boolean)
 )].sort()
@@ -56,7 +71,7 @@ const normalizeText = text =>
     : ''
 
 const dinosFiltrados = computed(() => {
-  let lista = [...dinossauros]
+  let lista = [...translatedDinos.value]
 
   lista = lista.filter(dino => {
     const buscaTexto = normalizeText(busca.value)

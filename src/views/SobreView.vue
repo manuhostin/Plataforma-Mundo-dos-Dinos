@@ -1,7 +1,63 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, inject, computed } from 'vue'
 
+const isEnglish = inject('isEnglish', ref(false))
 const status = ref('idle')
+
+const text = computed(() => ({
+  heroTitle: isEnglish.value ? 'About the Project' : 'Sobre o Projeto',
+  heroText: isEnglish.value
+    ? 'The Brazilian Dinosaurs project was created for educational and reference purposes, with the goal of bringing students, curious minds, and enthusiasts of Brazilian Paleontology closer to the fascinating world of dinosaurs found in the country.'
+    : 'O Dinossauros Brasileiros é um projeto criado para fins educacionais e de consulta, desenvolvido com o objetivo de aproximar estudantes, curiosos e entusiastas da Paleontologia brasileira do fascinante universo dos dinossauros encontrados no território nacional.',
+  purposeTitle: isEnglish.value ? 'Educational Purpose' : 'Finalidade Educacional',
+  purposeText: isEnglish.value
+    ? 'This project was developed exclusively for study, scientific dissemination, and reference. It has no commercial purpose and is not officially linked to museums, universities, or scientific institutions.'
+    : 'Este projeto foi desenvolvido exclusivamente para estudo, divulgação científica e consulta. Não possui fins lucrativos e não tem relação oficial com museus, universidades ou instituições científicas.',
+  imageRightsTitle: isEnglish.value ? 'Image Rights' : 'Direitos das Imagens',
+  imageRightsText: isEnglish.value
+    ? 'The images used belong to their respective authors and copyright holders. If any image is being used inappropriately, please contact us for correction or removal.'
+    : 'As imagens utilizadas pertencem aos seus respectivos autores e detentores de direitos. Caso alguma imagem esteja sendo utilizada inadequadamente, entre em contato para correção ou remoção.',
+  devTitle: isEnglish.value ? 'About the Developer' : 'Sobre o Dev',
+  devText: isEnglish.value
+    ? 'Since childhood, I have always been fascinated by dinosaurs, and programming also awakened my interest. This project was born from the union of these two passions. The idea is to make Brazilian Paleontology more accessible, allowing people to discover Brazilian species, learn their history, and understand the importance of science and preservation.'
+    : 'Desde criança, sempre fui fascinado por dinossauros e, ao mesmo tempo, a programação também despertou meu interesse, e o projeto nasceu justamente da união dessas duas paixões. A ideia é tornar a Paleontologia brasileira mais acessível, permitindo que as pessoas descubram espécies brasileiras, conheçam sua história e entendam a importância da ciência e da preservação.',
+  sourcesTitle: isEnglish.value ? 'Research Sources' : 'Fontes de Pesquisa',
+  sourcesText: isEnglish.value
+    ? 'The information in this project is based on books, scientific articles, specialized publications, and scientific outreach materials.'
+    : 'As informações presentes neste projeto foram baseadas em livros, artigos científicos, publicações especializadas e materiais de divulgação científica.',
+  contactTitle: isEnglish.value ? 'Get in Touch' : 'Entre em contato',
+  contactText: isEnglish.value
+    ? 'Found an error, want to suggest content, or send feedback?'
+    : 'Encontrou algum erro, quer sugerir conteúdo ou enviar comentários? :)',
+  form: {
+    emailLabel: 'Email',
+    subjectLabel: isEnglish.value ? 'Subject' : 'Assunto',
+    messageLabel: isEnglish.value ? 'Message' : 'Mensagem',
+    sendButton: isEnglish.value ? 'Send' : 'Enviar',
+    sendingButton: isEnglish.value ? 'Sending...' : 'Enviando...',
+  },
+  sourceItems: isEnglish.value
+    ? [
+        { title: 'The New Complete Guide to Dinosaurs of Brazil', author: 'Luiz Eduardo Anelli' },
+        { title: 'Dinosaurs of Brazil', author: 'Luiz Eduardo Anelli' },
+        { title: 'New discoveries of Brazilian dinosaurs', author: 'Articles published in the scientific journal PLOS ONE' },
+        { title: 'National Museum (UFRJ)' },
+        { title: 'Plácido Cidade Nuvens Paleontology Museum' },
+        { title: 'Brazilian Society of Paleontology' },
+        { title: 'Scientific American Brazil — Paleontology' },
+        { title: 'National Geographic Brazil — Dinosaurs' },
+      ]
+    : [
+        { title: 'O Novo Guia Completo dos Dinossauros do Brasil', author: 'Luiz Eduardo Anelli' },
+        { title: 'Dinossauros do Brasil', author: 'Luiz Eduardo Anelli' },
+        { title: 'Novas descobertas de dinossauros brasileiros', author: 'Artigos publicados na revista científica PLOS ONE' },
+        { title: 'Museu Nacional (UFRJ)' },
+        { title: 'Museu de Paleontologia Plácido Cidade Nuvens' },
+        { title: 'Sociedade Brasileira de Paleontologia' },
+        { title: 'Scientific American Brasil — Paleontologia' },
+        { title: 'National Geographic Brasil — Dinossauros' },
+      ],
+}))
 
 async function handleSubmit(e) {
   e.preventDefault()
@@ -29,15 +85,11 @@ async function handleSubmit(e) {
       <div class="about-header-content">
         <div class="about-text-left">
           <h1>
-            Sobre o Projeto
+            {{ text.heroTitle }}
           </h1>
 
           <p>
-            O <strong>Dinossauros Brasileiros</strong> é um projeto criado
-            para fins educacionais e de consulta, desenvolvido com o objetivo
-            de aproximar estudantes, curiosos e entusiastas da Paleontologia
-            brasileira do fascinante universo dos dinossauros encontrados
-            no território nacional.
+            {{ text.heroText }}
           </p>
         </div>
 
@@ -59,14 +111,10 @@ async function handleSubmit(e) {
         <font-awesome-icon icon="graduation-cap" class="fa-icon" />
       </div>
 
-      <h3>Finalidade Educacional</h3>
+      <h3>{{ text.purposeTitle }}</h3>
 
       <p>
-        Este projeto foi desenvolvido exclusivamente para
-        estudo, divulgação científica e consulta.
-        Não possui fins lucrativos e não tem
-        relação oficial com museus, universidades
-        ou instituições científicas.
+        {{ text.purposeText }}
       </p>
 
     </div>
@@ -77,14 +125,10 @@ async function handleSubmit(e) {
         <font-awesome-icon icon="image" class="fa-icon" />
       </div>
 
-      <h3>Direitos das Imagens</h3>
+      <h3>{{ text.imageRightsTitle }}</h3>
 
       <p>
-        As imagens utilizadas pertencem aos seus
-        respectivos autores e detentores de direitos.
-        Caso alguma imagem esteja sendo utilizada
-        inadequadamente, entre em contato para
-        correção ou remoção.
+        {{ text.imageRightsText }}
       </p>
 
     </div>
@@ -95,14 +139,10 @@ async function handleSubmit(e) {
         <font-awesome-icon icon="user-astronaut" class="fa-icon" />
       </div>
 
-      <h3>Sobre o Dev</h3>
+      <h3>{{ text.devTitle }}</h3>
 
       <p>
-        Desde criança, sempre fui fascinado por dinossauros e, ao mesmo tempo,
-        a programação também despertou meu interesse, e o projeto nasceu justamente da união dessas duas paixões. A ideia é tornar a Paleontologia
-        brasileira mais acessível, permitindo que as pessoas
-        descubram espécies brasileiras, conheçam sua
-        história e entendam a importância da ciência e da preservação.
+        {{ text.devText }}
       </p>
 
     </div>
@@ -113,50 +153,17 @@ async function handleSubmit(e) {
   <section class="sources">
 
     <h2>
-      <font-awesome-icon icon="book" class="fa-icon" /> Fontes de Pesquisa
+      <font-awesome-icon icon="book" class="fa-icon" /> {{ text.sourcesTitle }}
     </h2>
 
     <p>
-      As informações presentes neste projeto foram baseadas em livros,
-      artigos científicos, publicações especializadas e materiais
-      de divulgação científica.
+      {{ text.sourcesText }}
     </p>
 
     <div class="source-list">
 
-      <div class="source-item">
-        <b>O Novo Guia Completo dos Dinossauros do Brasil</b><br>
-        Luiz Eduardo Anelli
-      </div>
-
-      <div class="source-item">
-        <b>Dinossauros do Brasil</b><br>
-        Luiz Eduardo Anelli
-      </div>
-
-      <div class="source-item">
-        <b>Novas descobertas de dinossauros brasileiros</b><br>
-        Artigos publicados na revista científica PLOS ONE
-      </div>
-
-      <div class="source-item">
-        <b>Museu Nacional (UFRJ)</b>
-      </div>
-
-      <div class="source-item">
-        <b>Museu de Paleontologia Plácido Cidade Nuvens</b>
-      </div>
-
-      <div class="source-item">
-        <b>Sociedade Brasileira de Paleontologia</b>
-      </div>
-
-      <div class="source-item">
-        <b>Scientific American Brasil — Paleontologia</b>
-      </div>
-
-      <div class="source-item">
-        <b>National Geographic Brasil — Dinossauros</b>
+      <div v-for="item in text.sourceItems" :key="item.title" class="source-item">
+        <b>{{ item.title }}</b><br v-if="item.author">{{ item.author }}
       </div>
 
     </div>
@@ -167,25 +174,24 @@ async function handleSubmit(e) {
   <section class="contact-section">
 
     <h2>
-      <font-awesome-icon icon="envelope" class="fa-icon" /> Entre em contato
+      <font-awesome-icon icon="envelope" class="fa-icon" /> {{ text.contactTitle }}
     </h2>
 
     <p>
-      Encontrou algum erro, quer sugerir conteúdo
-      ou enviar comentários? :)
+      {{ text.contactText }}
     </p>
 
     <form class="contact-form" @submit.prevent="handleSubmit">
       <input type="hidden" name="access_key" value="w3f_3562cf87ac010c57afd82bddafd2ed4bcffb7a179613bdf4" />
-      <label>Email</label>
+      <label>{{ text.form.emailLabel }}</label>
       <input type="email" name="email" required />
-      <label>Assunto</label>
+      <label>{{ text.form.subjectLabel }}</label>
       <input type="text" name="assunto" required />
-      <label>Mensagem</label>
+      <label>{{ text.form.messageLabel }}</label>
       <textarea name="mensagem" rows="6" required></textarea>
       <input type="hidden" name="_gotcha" style="display:none" />
       <button type="submit" :disabled="status === 'sending'">
-        {{ status === 'sending' ? 'Enviando...' : 'Enviar' }}
+        {{ status === 'sending' ? text.form.sendingButton : text.form.sendButton }}
       </button>
     </form>
 

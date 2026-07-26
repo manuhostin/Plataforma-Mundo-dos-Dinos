@@ -1,14 +1,34 @@
 <script setup>
-import { computed, ref, watch } from 'vue'
+import { computed, ref, watch, inject } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import dinossauros from '../data/dinossauros'
+import { translateDinoField } from '../utils/translateDinoData'
 
 const route = useRoute()
 const router = useRouter()
 
-const dino = computed(() =>
+const isEnglish = inject('isEnglish', ref(false))
+
+const dinoOriginal = computed(() =>
   dinossauros.find(item => item.id == route.params.id)
 )
+
+const dino = computed(() => {
+  if (!dinoOriginal.value) return null
+
+  return {
+    ...dinoOriginal.value,
+    nome: translateDinoField(dinoOriginal.value, 'nome', isEnglish.value),
+    periodo: translateDinoField(dinoOriginal.value, 'periodo', isEnglish.value),
+    dieta: translateDinoField(dinoOriginal.value, 'dieta', isEnglish.value),
+    local: translateDinoField(dinoOriginal.value, 'local', isEnglish.value),
+    familia: translateDinoField(dinoOriginal.value, 'familia', isEnglish.value),
+    tamanho: translateDinoField(dinoOriginal.value, 'tamanho', isEnglish.value),
+    peso: translateDinoField(dinoOriginal.value, 'peso', isEnglish.value),
+    descricao: translateDinoField(dinoOriginal.value, 'descricao', isEnglish.value),
+    curiosidades: translateDinoField(dinoOriginal.value, 'curiosidades', isEnglish.value),
+  }
+})
 
 const imagemSelecionada = ref('')
 
@@ -22,12 +42,22 @@ const galeria = computed(() => {
       : []
 })
 
-watch(dino, (novo) => {
+watch(dinoOriginal, (novo) => {
   if (novo?.imagem) {
     imagemSelecionada.value = novo.imagem
   }
 }, { immediate: true })
 
+const text = computed(() => ({
+  back: isEnglish.value ? 'Back' : 'Voltar',
+  diet: isEnglish.value ? 'Diet' : 'Dieta',
+  family: isEnglish.value ? 'Family' : 'Família',
+  size: isEnglish.value ? 'Size' : 'Tamanho',
+  weight: isEnglish.value ? 'Weight' : 'Peso',
+  funFact: isEnglish.value ? 'Fun Fact' : 'Curiosidade',
+  gallery: isEnglish.value ? 'Gallery' : 'Galeria',
+  notFound: isEnglish.value ? 'Dinosaur not found' : 'Dinossauro não encontrado',
+}))
 </script>
 
 <template>
@@ -37,7 +67,7 @@ class="botao-voltar"
 @click="router.back()"
 >
 <font-awesome-icon icon="arrow-left" />
-Voltar
+{{ text.back }}
 </button>
 
 <section
@@ -83,7 +113,7 @@ class="pagina"
 
 <span>
 <font-awesome-icon icon="drumstick-bite" />
-Dieta
+{{ text.diet }}
 </span>
 
 <strong>
@@ -97,7 +127,7 @@ Dieta
 
 <span>
 <font-awesome-icon icon="dna" />
-Família
+{{ text.family }}
 </span>
 
 <strong>
@@ -111,7 +141,7 @@ Família
 
 <span>
 <font-awesome-icon icon="ruler" />
-Tamanho
+{{ text.size }}
 </span>
 
 <strong>
@@ -125,7 +155,7 @@ Tamanho
 
 <span>
 <font-awesome-icon icon="weight-scale" />
-Peso
+{{ text.weight }}
 </span>
 
 <strong>
@@ -146,7 +176,7 @@ class="curiosidade"
 
  <font-awesome-icon icon="lightbulb" class="fa-icon" />
 
-Curiosidade
+{{ text.funFact }}
 
 </h3>
 
@@ -159,7 +189,7 @@ Curiosidade
 
 <div class="galeria">
 
-<h2>Galeria</h2>
+<h2>{{ text.gallery }}</h2>
 
 <div class="miniaturas">
 
@@ -185,7 +215,7 @@ v-else
 class="erro"
 >
 
-Dinossauro não encontrado
+{{ text.notFound }}
 
 </section>
 

@@ -1,9 +1,11 @@
 <script setup>
-import { onMounted, ref, computed, watch } from 'vue'
+import { onMounted, ref, computed, watch, inject } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import dinossauros from '../data/dinossauros.js'
+import { translateDinoField } from '../utils/translateDinoData'
 
+const isEnglish = inject('isEnglish', ref(false))
 const mapContainer = ref(null)
 let map = null
 let markers = []
@@ -15,40 +17,54 @@ const filtros = ref({
   busca: ''
 })
 
+const translatedDinos = computed(() =>
+  dinossauros.map(dino => ({
+    ...dino,
+    nome: translateDinoField(dino, 'nome', isEnglish.value),
+    periodo: translateDinoField(dino, 'periodo', isEnglish.value),
+    dieta: translateDinoField(dino, 'dieta', isEnglish.value),
+    local: translateDinoField(dino, 'local', isEnglish.value),
+    familia: translateDinoField(dino, 'familia', isEnglish.value),
+    tamanho: translateDinoField(dino, 'tamanho', isEnglish.value),
+    peso: translateDinoField(dino, 'peso', isEnglish.value),
+    descricao: translateDinoField(dino, 'descricao', isEnglish.value),
+  }))
+)
+
 const opcoesPeriodo = computed(() => {
   const periodos = new Set()
-  dinossauros.forEach(d => {
+  translatedDinos.value.forEach(d => {
     if (d.periodo) {
       const periodoPrincipal = d.periodo.split(' ')[0]
       periodos.add(periodoPrincipal)
     }
   })
-  return ['Todos', ...Array.from(periodos).sort()]
+  return [(isEnglish.value ? 'All' : 'Todos'), ...Array.from(periodos).sort()]
 })
 
 const opcoesDieta = computed(() => {
   const dietas = new Set()
-  dinossauros.forEach(d => {
+  translatedDinos.value.forEach(d => {
     if (d.dieta) dietas.add(d.dieta)
   })
-  return ['Todos', ...Array.from(dietas).sort()]
+  return [(isEnglish.value ? 'All' : 'Todos'), ...Array.from(dietas).sort()]
 })
 
 const opcoesEstado = computed(() => {
   const estados = new Set()
-  dinossauros.forEach(d => {
+  translatedDinos.value.forEach(d => {
     if (d.local) {
       const partes = d.local.split(', ')
       const estado = partes[partes.length - 1]
       estados.add(estado)
     }
   })
-  return ['Todos', ...Array.from(estados).sort()]
+  return [(isEnglish.value ? 'All' : 'Todos'), ...Array.from(estados).sort()]
 })
 
 // Dados filtrados
 const dadosFiltrados = computed(() => {
-  return dinossauros.filter(d => {
+  return translatedDinos.value.filter(d => {
     if (filtros.value.periodo && filtros.value.periodo !== 'Todos') {
       if (!d.periodo || !d.periodo.includes(filtros.value.periodo)) {
         return false
@@ -89,6 +105,26 @@ const emojiMap = {
 
 const emojiPadrao = '🦴'
 
+const text = computed(() => ({
+  title: isEnglish.value ? 'Map of Brazilian Dinosaurs' : 'Mapa dos Dinossauros Brasileiros',
+  intro: isEnglish.value
+    ? 'Explore the fossil discovery sites of Brazilian dinosaurs on an interactive map. For more information, visit the '
+    : 'Visualize em um mapa interativo os pontos de descoberta dos fósseis dos dinossauros do Brasil. Para mais informações, visite o ',
+  catalogLink: isEnglish.value ? 'catalog' : 'catálogo',
+  allOption: isEnglish.value ? 'All' : 'Todos',
+  searchLabel: isEnglish.value ? 'Search' : 'Buscar',
+  searchPlaceholder: isEnglish.value ? 'Name, place or period...' : 'Nome, local ou período...',
+  periodLabel: isEnglish.value ? 'Period' : 'Período',
+  dietLabel: isEnglish.value ? 'Diet' : 'Dieta',
+  stateLabel: isEnglish.value ? 'State' : 'Estado',
+  clearButton: isEnglish.value ? 'Clear' : 'Limpar',
+  resultsCount: isEnglish.value
+    ? `${dadosFiltrados.value.length} dinosaur(s) found`
+    : `${dadosFiltrados.value.length} dinossauro(s) encontrado(s)`,
+  popupDietLabel: isEnglish.value ? 'Diet' : 'Dieta',
+  popupSizeLabel: isEnglish.value ? 'Size' : 'Tamanho',
+}))
+
 function atualizarMarcadores() {
   if (!map) return
 
@@ -123,7 +159,7 @@ function atualizarMarcadores() {
       ${item.local}<br />
       <em>${item.periodo}</em><br />
       <span style="font-size: 0.9rem; color: #475569;">
-        Dieta: ${item.dieta} | Tamanho: ${item.tamanho || 'N/A'}
+        ${text.value.popupDietLabel}: ${item.dieta} | ${text.value.popupSizeLabel}: ${item.tamanho || 'N/A'}
       </span>
       ${item.descricao ? `<br /><br /><span style="font-size: 0.85rem;">${item.descricao}</span>` : ''}
     `
@@ -170,10 +206,9 @@ function limparFiltros() {
   <section class="mapa-page">
     <header class="mapa-header">
       <div>
-        <h1>Mapa dos Dinossauros Brasileiros</h1>
+        <h1>{{ text.title }}</h1>
         <p>
-          Visualize em um mapa interativo os pontos de descoberta dos fósseis dos
-          dinossauros do Brasil. Para mais informações, visite o <stronger>catálogo!</stronger>
+          {{ text.intro }}<strong>{{ text.catalogLink }}</strong>!
         </p>
       </div>
 
@@ -182,21 +217,21 @@ function limparFiltros() {
         <div class="filtros-grid">
           <!-- Busca -->
           <div class="filtro-group">
-            <label for="busca">Buscar</label>
+            <label for="busca">{{ text.searchLabel }}</label>
             <input
               id="busca"
               v-model="filtros.busca"
               type="text"
-              placeholder="Nome, local ou período..."
+              :placeholder="text.searchPlaceholder"
               class="filtro-input"
             />
           </div>
 
           <!-- Período -->
           <div class="filtro-group">
-            <label for="periodo">Período</label>
+            <label for="periodo">{{ text.periodLabel }}</label>
             <select id="periodo" v-model="filtros.periodo" class="filtro-select">
-              <option value="">Todos</option>
+              <option value="">{{ text.allOption }}</option>
               <option v-for="opcao in opcoesPeriodo" :key="opcao" :value="opcao">
                 {{ opcao }}
               </option>
@@ -205,9 +240,9 @@ function limparFiltros() {
 
           <!-- Dieta -->
           <div class="filtro-group">
-            <label for="dieta">Dieta</label>
+            <label for="dieta">{{ text.dietLabel }}</label>
             <select id="dieta" v-model="filtros.dieta" class="filtro-select">
-              <option value="">Todos</option>
+              <option value="">{{ text.allOption }}</option>
               <option v-for="opcao in opcoesDieta" :key="opcao" :value="opcao">
                 {{ opcao }}
               </option>
@@ -216,9 +251,9 @@ function limparFiltros() {
 
           <!-- Estado -->
           <div class="filtro-group">
-            <label for="estado">Estado</label>
+            <label for="estado">{{ text.stateLabel }}</label>
             <select id="estado" v-model="filtros.estado" class="filtro-select">
-              <option value="">Todos</option>
+              <option value="">{{ text.allOption }}</option>
               <option v-for="opcao in opcoesEstado" :key="opcao" :value="opcao">
                 {{ opcao }}
               </option>
@@ -228,14 +263,14 @@ function limparFiltros() {
           <!-- Botão Limpar -->
           <div class="filtro-group btn-group">
             <button @click="limparFiltros" class="btn-limpar">
-              Limpar
+              {{ text.clearButton }}
             </button>
           </div>
         </div>
 
         <!-- Contador -->
         <div class="resultados-info">
-          <span>{{ dadosFiltrados.length }} dinossauro(s) encontrado(s)</span>
+          <span>{{ text.resultsCount }}</span>
         </div>
       </div>
     </header>
