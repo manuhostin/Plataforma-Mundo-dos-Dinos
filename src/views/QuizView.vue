@@ -4,8 +4,8 @@
     <div class="quiz-card">
 
       <h1>
-      Quiz dos
-        <span>Dinossauros Brasileiros</span>
+        {{ text.title }}
+        <span>{{ text.subtitle }}</span>
       </h1>
 
       <div v-if="perguntaAtual">
@@ -19,14 +19,14 @@
         <div class="question-box">
 
           <h2>
-            Qual é a
-            <span>{{ perguntaAtual.tipo }}</span>
-            de
+            {{ text.questionPrefix }}
+            <span>{{ getTipoLabel(perguntaAtual.tipo) }}</span>
+            {{ text.questionSuffix }}
             {{ perguntaAtual.dino.nome }}?
           </h2>
 
           <p class="rodada">
-            Pergunta {{ rodada + 1 }}/10
+            {{ text.questionCounter.replace('{number}', rodada + 1) }}
           </p>
 
         </div>
@@ -45,7 +45,7 @@
 
         <div class="score">
 
-          ⭐ {{ pontos }} pontos
+          ⭐ {{ pontos }} {{ text.pointsLabel }}
 
         </div>
 
@@ -54,13 +54,13 @@
       <div v-else class="resultado">
 
         <h2>
-          🎉 Quiz Finalizado
+          🎉 {{ text.finishedTitle }}
         </h2>
 
         <div class="resultado-box">
 
           <h3>
-            Sua pontuação
+            {{ text.scoreLabel }}
           </h3>
 
           <span>
@@ -73,7 +73,7 @@
           class="reiniciar-btn"
           @click="reiniciar"
         >
-          Jogar Novamente
+          {{ text.restartButton }}
         </button>
 
       </div>
@@ -84,9 +84,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, inject, computed } from 'vue'
 import dinossauros from '@/data/dinossauros'
+import { translateDinoField } from '../utils/translateDinoData'
 
+const isEnglish = inject('isEnglish', ref(false))
 const pontos = ref(0)
 const rodada = ref(0)
 
@@ -99,6 +101,40 @@ const tiposPergunta=[
 'familia'
 ]
 
+const dinossaurosTraduzidos = computed(() =>
+  dinossauros.map(dino => ({
+    ...dino,
+    nome: translateDinoField(dino, 'nome', isEnglish.value),
+    periodo: translateDinoField(dino, 'periodo', isEnglish.value),
+    dieta: translateDinoField(dino, 'dieta', isEnglish.value),
+    familia: translateDinoField(dino, 'familia', isEnglish.value),
+  }))
+)
+
+const text = computed(() => ({
+  title: isEnglish.value ? 'Brazilian Dinosaurs' : 'Quiz dos',
+  subtitle: isEnglish.value ? 'Quiz' : 'Dinossauros Brasileiros',
+  questionPrefix: isEnglish.value ? 'What is the' : 'Qual é a',
+  questionSuffix: isEnglish.value ? 'of' : 'de',
+  questionCounter: isEnglish.value ? 'Question {number}/10' : 'Pergunta {number}/10',
+  pointsLabel: isEnglish.value ? 'points' : 'pontos',
+  finishedTitle: isEnglish.value ? 'Quiz Finished' : 'Quiz Finalizado',
+  scoreLabel: isEnglish.value ? 'Your score' : 'Sua pontuação',
+  restartButton: isEnglish.value ? 'Play Again' : 'Jogar Novamente',
+}))
+
+function getTipoLabel(tipo) {
+  if (!tipo) return ''
+
+  const labels = {
+    dieta: isEnglish.value ? 'diet' : 'dieta',
+    periodo: isEnglish.value ? 'period' : 'período',
+    familia: isEnglish.value ? 'family' : 'família',
+  }
+
+  return labels[tipo] || tipo
+}
+
 function embaralhar(array){
  return [...array].sort(()=>Math.random()-0.5)
 }
@@ -106,9 +142,9 @@ function embaralhar(array){
 function gerarPergunta(){
 
  const dino=
- dinossauros[
+ dinossaurosTraduzidos.value[
  Math.floor(
- Math.random()*dinossauros.length
+ Math.random()*dinossaurosTraduzidos.value.length
  )
  ]
 
@@ -122,7 +158,7 @@ function gerarPergunta(){
  const respostaCorreta=dino[tipo]
 
  let respostasErradas=
- dinossauros
+ dinossaurosTraduzidos.value
  .map(d=>d[tipo])
  .filter(
  v=>v!==respostaCorreta
@@ -159,16 +195,16 @@ function responder(opcao){
  perguntaAtual.value.resposta
  ){
  pontos.value++
- alert('✅ Acertou!')
+ alert(isEnglish.value ? '✅ Correct!' : '✅ Acertou!')
  }
 
  else{
 
  alert(
-`❌ Errou!
-Resposta correta:
-${perguntaAtual.value.resposta}`
-)
+ isEnglish.value
+   ? `❌ Wrong!\nCorrect answer:\n${perguntaAtual.value.resposta}`
+   : `❌ Errou!\nResposta correta:\n${perguntaAtual.value.resposta}`
+ )
 
  }
 
@@ -212,63 +248,39 @@ font-family:'Lexend Deca',sans-serif;
 }
 
 .quiz-container{
-
 min-height:100vh;
-
 padding:40px;
-
 display:flex;
 justify-content:center;
 align-items:center;
-
-
 }
 
 .quiz-card{
-
 width:100%;
 max-width:900px;
-
-background:rgb(247, 242, 200);
-
+background:var(--surface);
 padding:40px;
-
 border-radius:28px;
-
-box-shadow:
-0 30px 80px rgba(15,23,42,.08);
-
+box-shadow:0 30px 80px var(--shadow, rgba(15,23,42,.08));
+color:var(--page-text);
 }
 
 .tag{
-
 display:inline-block;
-
 padding:8px 16px;
-
 background:#fef3c7;
-
 color:#e4af1c;
-
 border-radius:999px;
-
 font-size:.9rem;
 font-weight:600;
-
 margin-bottom:20px;
-
 }
 
 h1{
-
 font-size:2.8rem;
-
-color:#1e293b;
-
+color:var(--page-text);
 margin-bottom:30px;
-
 text-align:center;
-
 }
 
 h1 span{
@@ -276,44 +288,26 @@ color:#1d9122;
 }
 
 .imagem{
-
 width:100%;
-
 max-width:500px;
-
 height:300px;
-
 display:block;
-
 margin:auto;
-
 object-fit:cover;
-
 border-radius:20px;
-
 margin-bottom:30px;
-
-box-shadow:
-0 15px 35px rgba(0,0,0,.15);
-
+box-shadow:0 15px 35px rgba(0,0,0,.15);
 }
 
 .question-box{
-
 text-align:center;
-
 margin-bottom:25px;
-
 }
 
 .question-box h2{
-
 font-size:1.5rem;
-
-color:#1e293b;
-
+color:var(--page-text);
 margin-bottom:10px;
-
 }
 
 .question-box span{
@@ -321,159 +315,88 @@ color:#1d9122;
 }
 
 .rodada{
-
-color:#64748b;
-
+color:var(--page-text);
+opacity:0.75;
 font-size:.95rem;
-
 }
 
 .opcoes{
-
 display:grid;
-
-grid-template-columns:
-repeat(2,1fr);
-
+grid-template-columns:repeat(2,1fr);
 gap:16px;
-
 margin-bottom:25px;
-
 }
 
 .opcoes button{
-
 border:none;
-
 padding:16px;
-
 border-radius:16px;
-
-background:#f8fafc;
-
+background:var(--surface-muted);
 font-size:1rem;
-
 font-weight:600;
-
 cursor:pointer;
-
 transition:.3s;
-
-color:#334155;
-
-box-shadow:
-0 5px 15px rgba(0,0,0,.05);
-
+color:var(--page-text);
+box-shadow:0 5px 15px rgba(0,0,0,.05);
 }
 
 .opcoes button:hover{
-
 transform:translateY(-4px);
-
 background:#2d6cdf;
-
 color:white;
-
 }
 
 .score{
-
-background:#f8fafc;
-
+background:var(--surface-muted);
 padding:15px;
-
 border-radius:16px;
-
 font-weight:600;
-
 text-align:center;
-
-color:#1e293b;
-
+color:var(--page-text);
 }
 
 .resultado{
-
 text-align:center;
-
 }
 
 .resultado-box{
-
 margin:30px auto;
-
 padding:30px;
-
 max-width:300px;
-
 border-radius:20px;
-
-background:#f8fafc;
-
+background:var(--surface-muted);
 }
 
 .resultado-box span{
-
 display:block;
-
 font-size:3rem;
-
 font-weight:bold;
-
 color:#1d9122;
-
 margin-top:10px;
-
 }
 
 .reiniciar-btn{
-
 margin-top:20px;
-
 padding:15px 30px;
-
 border:none;
-
 border-radius:999px;
-
 background:#2d6cdf;
-
 color:white;
-
 font-weight:600;
-
 cursor:pointer;
-
 transition:.3s;
-
 }
 
 .reiniciar-btn:hover{
-
 transform:translateY(-4px);
-
 background:#1d4fb3;
-
 }
 
 @media(max-width:768px){
-
-.quiz-card{
-padding:25px;
-}
-
-h1{
-font-size:2rem;
-}
-
-.opcoes{
-grid-template-columns:1fr;
-}
-
-.imagem{
-height:220px;
-}
-
+.quiz-card{padding:25px;}
+h1{font-size:2rem;}
+.opcoes{grid-template-columns:1fr;}
+.imagem{height:220px;}
 }
 
 </style>

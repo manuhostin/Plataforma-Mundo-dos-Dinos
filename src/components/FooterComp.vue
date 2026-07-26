@@ -1,11 +1,27 @@
+<script setup>
+import { ref, inject, computed } from 'vue'
+
+const isEnglish = inject('isEnglish', ref(false))
+
+const text = computed(() => ({
+  title: isEnglish.value
+    ? 'The Fantastic World of Dinosaurs'
+    : 'O Fantástico Mundo dos Dinossauros',
+  subtitle: isEnglish.value
+    ? 'Research on Brazilian paleofauna'
+    : 'Pesquisa sobre a paleofauna brasileira',
+  credit: isEnglish.value ? 'Developed by: Manu Hostin' : 'Desenvolvido por: Manu Hostin',
+}))
+</script>
+
 <template>
   <footer class="footer">
     <div class="footer-content">
       <div class="left-info">
-        <p><strong>O Fantástico Mundo dos Dinossauros</strong></p>
-        <p>Pesquisa sobre a paleofauna brasileira</p>
+        <p><strong>{{ text.title }}</strong></p>
+        <p>{{ text.subtitle }}</p>
       </div>
-      <div class="right-info">Desenvolvido por: Manu Hostin</div>
+      <div class="right-info">{{ text.credit }}</div>
     </div>
   </footer>
 </template>
@@ -15,12 +31,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
 .footer {
-  font-family: "Lexend Deca", sans-serif;
-  background-color: #f8fafc;
+  font-family: 'Lexend Deca', sans-serif;
+  background-color: var(--surface);
   padding: 20px 40px;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid var(--border);
   font-size: 10px;
-  color: #718096;
+  color: var(--page-text);
   display: flex;
   justify-content: center;
 }
@@ -37,9 +53,11 @@
   margin: 0;
   font-weight: 300;
   line-height: 1.2;
+  color: var(--page-text);
 }
 
 .right-info {
   font-weight: 300;
+  color: var(--page-text);
 }
 </style>

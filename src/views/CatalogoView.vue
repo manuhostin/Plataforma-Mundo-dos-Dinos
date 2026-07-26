@@ -1,6 +1,9 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, inject } from 'vue'
 import dinossauros from '../data/dinossauros'
+import { translateDinoField } from '../utils/translateDinoData'
+
+const isEnglish = inject('isEnglish', ref(false))
 
 const busca = ref('')
 const periodoSelecionado = ref('')
@@ -26,20 +29,34 @@ const getEstado = local => {
   return partes[partes.length - 1].trim()
 }
 
+const translatedDinos = computed(() =>
+  dinossauros.map(dino => ({
+    ...dino,
+    nome: translateDinoField(dino, 'nome', isEnglish.value),
+    periodo: translateDinoField(dino, 'periodo', isEnglish.value),
+    dieta: translateDinoField(dino, 'dieta', isEnglish.value),
+    local: translateDinoField(dino, 'local', isEnglish.value),
+    familia: translateDinoField(dino, 'familia', isEnglish.value),
+    tamanho: translateDinoField(dino, 'tamanho', isEnglish.value),
+    peso: translateDinoField(dino, 'peso', isEnglish.value),
+    descricao: translateDinoField(dino, 'descricao', isEnglish.value),
+  }))
+)
+
 const periodos = [...new Set(
-  dinossauros
+  translatedDinos.value
     .map(d => getPrimaryPeriodo(d.periodo))
     .filter(Boolean)
 )].sort()
 
 const dietas = [...new Set(
-  dinossauros
+  translatedDinos.value
     .map(d => getPrimaryDieta(d.dieta))
     .filter(Boolean)
 )].sort()
 
 const estados = [...new Set(
-  dinossauros
+  translatedDinos.value
     .map(d => getEstado(d.local))
     .filter(Boolean)
 )].sort()
@@ -54,7 +71,7 @@ const normalizeText = text =>
     : ''
 
 const dinosFiltrados = computed(() => {
-  let lista = [...dinossauros]
+  let lista = [...translatedDinos.value]
 
   lista = lista.filter(dino => {
     const buscaTexto = normalizeText(busca.value)
@@ -92,6 +109,29 @@ const dinosFiltrados = computed(() => {
   return lista
 })
 
+const text = computed(() => ({
+  headerTitle: isEnglish.value
+    ? 'Brazilian Dinosaur Catalog'
+    : 'Catálogo de Dinossauros Brasileiros',
+  resultsFound: isEnglish.value
+    ? `${dinosFiltrados.value.length} species found`
+    : `${dinosFiltrados.value.length} espécies encontradas`,
+  searchLabel: isEnglish.value ? 'Search' : 'Buscar',
+  searchPlaceholder: isEnglish.value ? 'Search dinosaur...' : 'Pesquisar dinossauro...',
+  periodoLabel: isEnglish.value ? 'Period' : 'Período',
+  dietaLabel: isEnglish.value ? 'Diet' : 'Dieta',
+  estadoLabel: isEnglish.value ? 'State' : 'Estado',
+  ordenarLabel: isEnglish.value ? 'Sort' : 'Ordenar',
+  allOption: isEnglish.value ? 'All' : 'Todos',
+  sortAz: isEnglish.value ? 'A → Z' : 'A → Z',
+  sortZa: isEnglish.value ? 'Z → A' : 'Z → A',
+  clearButton: isEnglish.value ? 'Clear' : 'Limpar',
+  dietLabel: isEnglish.value ? 'Diet:' : 'Dieta:',
+  familyLabel: isEnglish.value ? 'Family:' : 'Família:',
+  sizeLabel: isEnglish.value ? 'Size:' : 'Tamanho:',
+  weightLabel: isEnglish.value ? 'Weight:' : 'Peso:',
+}))
+
 function limparFiltros() {
   busca.value = ''
   periodoSelecionado.value = ''
@@ -104,33 +144,33 @@ function limparFiltros() {
 <template>
   <section class="catalogo-page">
     <header class="catalogo-header">
-      <h1>Catálogo de Dinossauros Brasileiros</h1>
-      <p>{{ dinosFiltrados.length }} espécies encontradas</p>
+      <h1>{{ text.headerTitle }}</h1>
+      <p>{{ text.resultsFound }}</p>
     </header>
 
     <div class="filtros-container">
       <div class="filtros-grid">
         <!-- Busca -->
         <div class="filtro-group">
-          <label for="busca-catalogo">Buscar</label>
+          <label for="busca-catalogo">{{ text.searchLabel }}</label>
           <input
             id="busca-catalogo"
             v-model="busca"
             type="text"
-            placeholder="Pesquisar dinossauro..."
+            :placeholder="text.searchPlaceholder"
             class="filtro-input"
           />
         </div>
 
         <!-- Período -->
         <div class="filtro-group">
-          <label for="periodo-catalogo">Período</label>
+          <label for="periodo-catalogo">{{ text.periodoLabel }}</label>
           <select
             id="periodo-catalogo"
             v-model="periodoSelecionado"
             class="filtro-select"
           >
-            <option value="">Todos</option>
+            <option value="">{{ text.allOption }}</option>
             <option
               v-for="periodo in periodos"
               :key="periodo"
@@ -143,13 +183,13 @@ function limparFiltros() {
 
         <!-- Dieta -->
         <div class="filtro-group">
-          <label for="dieta-catalogo">Dieta</label>
+          <label for="dieta-catalogo">{{ text.dietaLabel }}</label>
           <select
             id="dieta-catalogo"
             v-model="dietaSelecionada"
             class="filtro-select"
           >
-            <option value="">Todos</option>
+            <option value="">{{ text.allOption }}</option>
             <option
               v-for="dieta in dietas"
               :key="dieta"
@@ -162,13 +202,13 @@ function limparFiltros() {
 
         <!-- Estado -->
         <div class="filtro-group">
-          <label for="estado-catalogo">Estado</label>
+          <label for="estado-catalogo">{{ text.estadoLabel }}</label>
           <select
             id="estado-catalogo"
             v-model="estadoSelecionado"
             class="filtro-select"
           >
-            <option value="">Todos</option>
+            <option value="">{{ text.allOption }}</option>
             <option
               v-for="estado in estados"
               :key="estado"
@@ -181,21 +221,21 @@ function limparFiltros() {
 
         <!-- Ordenação -->
         <div class="filtro-group">
-          <label for="ordenacao-catalogo">Ordenar</label>
+          <label for="ordenacao-catalogo">{{ text.ordenarLabel }}</label>
           <select
             id="ordenacao-catalogo"
             v-model="ordenacao"
             class="filtro-select"
           >
-            <option value="az">A → Z</option>
-            <option value="za">Z → A</option>
+            <option value="az">{{ text.sortAz }}</option>
+            <option value="za">{{ text.sortZa }}</option>
           </select>
         </div>
 
         <!-- Botão Limpar -->
         <div class="filtro-group btn-group">
           <button @click="limparFiltros" class="btn-limpar">
-            Limpar
+            {{ text.clearButton }}
           </button>
         </div>
       </div>
@@ -233,10 +273,10 @@ function limparFiltros() {
             </p>
 
             <ul class="metadata">
-              <li><strong>Dieta:</strong> {{ dino.dieta }}</li>
-              <li><strong>Família:</strong> {{ dino.familia }}</li>
-              <li><strong>Tamanho:</strong> {{ dino.tamanho }}</li>
-              <li><strong>Peso:</strong> {{ dino.peso }}</li>
+              <li><strong>{{ text.dietLabel }}</strong> {{ dino.dieta }}</li>
+              <li><strong>{{ text.familyLabel }}</strong> {{ dino.familia }}</li>
+              <li><strong>{{ text.sizeLabel }}</strong> {{ dino.tamanho }}</li>
+              <li><strong>{{ text.weightLabel }}</strong> {{ dino.peso }}</li>
             </ul>
 
           </div>
@@ -259,26 +299,28 @@ function limparFiltros() {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  color: var(--page-text);
 }
 
 .catalogo-header h1 {
   margin: 0;
   font-size: 2rem;
-  color: #336808;
+  color: var(--accent-strong);
 }
 
 .catalogo-header p {
   margin: 4px 0 0 0;
-  color: #475569;
+  color: var(--page-text);
+  opacity: 0.8;
   font-size: 1rem;
 }
 
 .filtros-container {
-  background: white;
+  background: var(--surface);
   border-radius: 20px;
   padding: 24px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 25px var(--shadow, rgba(0, 0, 0, 0.08));
 }
 
 .filtros-grid {
@@ -298,7 +340,7 @@ function limparFiltros() {
 .filtro-group label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #696047;
+  color: var(--page-text);
   letter-spacing: 0.3px;
 }
 
@@ -306,10 +348,10 @@ function limparFiltros() {
 .filtro-select {
   width: 100%;
   padding: 10px 14px;
-  border: 1.5px solid #d1d5db;
+  border: 1.5px solid var(--border);
   border-radius: 10px;
-  background: #fff;
-  color: #554c33;
+  background: var(--surface-muted);
+  color: var(--page-text);
   font-size: 0.9rem;
   transition: all 0.25s ease;
   font-family: 'Lexend Deca', sans-serif;
@@ -317,18 +359,19 @@ function limparFiltros() {
 }
 
 .filtro-input::placeholder {
-  color: #94a3b8;
+  color: var(--page-text);
+  opacity: 0.6;
 }
 
 .filtro-input:hover,
 .filtro-select:hover {
-  border-color: #fca607;
+  border-color: var(--accent);
 }
 
 .filtro-input:focus,
 .filtro-select:focus {
   outline: none;
-  border-color: #cf8804;
+  border-color: var(--accent);
   box-shadow: 0 0 0 4px rgba(104, 78, 8, 0.12);
 }
 
@@ -363,7 +406,6 @@ function limparFiltros() {
   transform: scale(0.98);
 }
 
-/* ===== CARDS ===== */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -376,11 +418,11 @@ function limparFiltros() {
 }
 
 .card {
-  background: white;
+  background: var(--surface);
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 25px var(--shadow, rgba(0, 0, 0, 0.08));
   transition: all 0.3s ease;
   height: 100%;
   display: flex;
@@ -389,11 +431,11 @@ function limparFiltros() {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 35px var(--shadow, rgba(0, 0, 0, 0.12));
 }
 
 .card-image {
-  background: #f8fafc;
+  background: var(--surface-muted);
   flex-shrink: 0;
 }
 
@@ -416,24 +458,26 @@ function limparFiltros() {
   margin-top: 0;
   margin-bottom: 8px;
   font-size: 1.3rem;
-  color: #1e293b;
+  color: var(--page-text);
 }
 
 .tag {
-  color: #2563eb;
+  color: var(--accent);
   font-weight: 600;
   font-size: 0.9rem;
   margin: 4px 0;
 }
 
 .local {
-  color: #475569;
+  color: var(--page-text);
+  opacity: 0.8;
   font-size: 0.9rem;
   margin: 4px 0;
 }
 
 .description {
-  color: #334155;
+  color: var(--page-text);
+  opacity: 0.8;
   line-height: 1.6;
   margin: 8px 0;
   flex: 1;
@@ -443,21 +487,21 @@ function limparFiltros() {
   list-style: none;
   padding: 0;
   margin: 12px 0 0 0;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid var(--border);
   padding-top: 12px;
 }
 
 .metadata li {
   margin-bottom: 4px;
   font-size: 0.9rem;
-  color: #475569;
+  color: var(--page-text);
+  opacity: 0.8;
 }
 
 .metadata li strong {
-  color: #334155;
+  color: var(--page-text);
 }
 
-/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 1200px) {
   .filtros-grid {
     grid-template-columns: 1fr 1fr 1fr;
